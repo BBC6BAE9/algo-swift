@@ -16,6 +16,9 @@
 		F1D936682D7445F200AD1B8D /* FibonacciTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936642D7445F200AD1B8D /* FibonacciTests.swift */; };
 		F1D9366A2D7446E300AD1B8D /* Fibonacci.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936692D7446E300AD1B8D /* Fibonacci.swift */; };
 		F1D9366B2D7446FF00AD1B8D /* Fibonacci.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936692D7446E300AD1B8D /* Fibonacci.swift */; };
+		F1D9366F2D7495E500AD1B8D /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D9366E2D7495E500AD1B8D /* LinkedListTests.swift */; };
+		F1D936702D74961800AD1B8D /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936592D7445ED00AD1B8D /* LinkedList.swift */; };
+		F1D936712D74969700AD1B8D /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D9365A2D7445ED00AD1B8D /* List.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +43,7 @@
 		F1D936632D7445F200AD1B8D /* ArrayListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayListTests.swift; sourceTree = "<group>"; };
 		F1D936642D7445F200AD1B8D /* FibonacciTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FibonacciTests.swift; sourceTree = "<group>"; };
 		F1D936692D7446E300AD1B8D /* Fibonacci.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fibonacci.swift; sourceTree = "<group>"; };
+		F1D9366E2D7495E500AD1B8D /* LinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 			children = (
 				F1D936642D7445F200AD1B8D /* FibonacciTests.swift */,
 				F1D936632D7445F200AD1B8D /* ArrayListTests.swift */,
+				F1D9366E2D7495E500AD1B8D /* LinkedListTests.swift */,
 			);
 			path = AlgoTests;
 			sourceTree = "<group>";
@@ -205,7 +210,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1D936702D74961800AD1B8D /* LinkedList.swift in Sources */,
 				F1D9366B2D7446FF00AD1B8D /* Fibonacci.swift in Sources */,
+				F1D936712D74969700AD1B8D /* List.swift in Sources */,
+				F1D9366F2D7495E500AD1B8D /* LinkedListTests.swift in Sources */,
 				F1D936612D7445ED00AD1B8D /* ArrayList.swift in Sources */,
 				F1D936672D7445F200AD1B8D /* ArrayListTests.swift in Sources */,
 				F1D936682D7445F200AD1B8D /* FibonacciTests.swift in Sources */,

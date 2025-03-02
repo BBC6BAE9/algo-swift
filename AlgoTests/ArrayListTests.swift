@@ -80,7 +80,6 @@ struct ArrayListTests {
         
         arrList.clear()
         assert(arrList.size() == 0)
-
     }
 
 }
