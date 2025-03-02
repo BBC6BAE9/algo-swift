@@ -7,6 +7,8 @@
 
 import Foundation
 
+// 实现同样功能的函数之间的性能差别很大
+
 // 递归的方法
 func fib1(_ n :Int) -> Int {
     if (n <= 1) {

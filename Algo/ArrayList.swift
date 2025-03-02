@@ -7,142 +7,24 @@
 
 import Foundation
 
-// 动态数组
+/// 动态数组
+/// 很多语言的数组是固定容量的，我们需要有一个能够动态扩容的数据结构，这个数据结构就是动态数组
 class ArrayList<E: Equatable> {
     
     /// 元素的数量
-    private var _size: Int = 0
+    var _size: Int = 0
     
     /// 所有的元素
     private var elements: [E?]
     
-    /// 默认容量
-    private static var DEFAULT_CAPACITY: Int {
-        return 10
-    }
-    
-    /// 元素没找到
-    private static var ELEMENT_NOT_FOUND: Int {
-        return -1
-    }
-    
     /// 构造方法
     /// - Parameter capacity: 容量
     init(capacity: Int = DEFAULT_CAPACITY) {
-        let capacity = (capacity < ArrayList.DEFAULT_CAPACITY) ? ArrayList.DEFAULT_CAPACITY : capacity
+        let capacity = (capacity < DEFAULT_CAPACITY) ? DEFAULT_CAPACITY : capacity
         self.elements = [E?](repeating: nil, count: capacity)
     }
     
-    /// 清除所有元素
-    func clear() {
-        for i in 0..<_size {
-            elements[i] = nil
-        }
-        _size = 0
-    }
-    
-    /// 元素的数量
-    func size() -> Int {
-        return _size
-    }
-    
-    /// 是否为空
-    func isEmpty() -> Bool {
-        return _size == 0
-    }
-    
-    /// 是否包含某个元素
-    func contains(element: E) -> Bool {
-        return indexOf(element: element) != ArrayList.ELEMENT_NOT_FOUND
-    }
-    
-    /// 添加一个元素
-    func add(element: E) {
-        add(index: _size, element: element)
-    }
-    
-    /// 获取index位置的元素
-    func get(index: Int) -> E? {
-        
-        rangeCheck(index: index)
-        
-        return elements[index]
-    }
-    
-    /// 设置index位置的元素
-    /// - Parameters:
-    /// - Returns: 原来的元素
-    func set(index: Int, element: E) -> E? {
-        
-        rangeCheck(index: index)
-        
-        let old = elements[index]
-        elements[index] = element
-        return old
-    }
-    
-    /// 在index位置的添加一个元素
-    func add(index: Int, element: E) {
-        
-        rangeCheckForAdd(index: index)
-        
-        ensureCapacity(capacity: _size + 1)
-        
-        for i in (index..<_size).reversed() {
-            elements[i+1] = elements[i]
-        }
-        
-        elements[index] = element
-        
-        _size += 1
-        
-    }
-    
-    /// 删除index位置的元素
-    func remove(index: Int) -> E? {
-        
-        rangeCheck(index: index)
-        
-        let old = elements[index]
-        for i in index + 1..<_size-1 {
-            elements[i-1] = elements[i]
-        }
-        _size -= 1
-        elements[_size] = nil
-        return old
-        
-    }
-    
-    /// 查看元素的索引
-    func indexOf(element: E) -> Int {
-        for i in 0..<_size {
-            if (elements[i] == element) {
-                return i
-            }
-        }
-        return ArrayList.ELEMENT_NOT_FOUND
-    }
-    
-    /// 越界检查
-    private func rangeCheck(index: Int) {
-        if (index < 0 || index >= _size) {
-            fatalError("Index out of bounds")
-        }
-    }
-    
-    /// add相关方法的越界检查
-    private func rangeCheckForAdd(index: Int) {
-        if (index < 0 || index > _size) {
-            fatalError("Index out of bounds")
-        }
-    }
-    
-    /// 抛出越界错误
-    private func outOFBounds() {
-        fatalError("Index out of bounds")
-    }
-    
-    /// 保证容量
+    /// 动态扩容
     func ensureCapacity(capacity: Int) {
         let oldCapacity = elements.count
         if oldCapacity > capacity {
@@ -160,5 +42,70 @@ class ArrayList<E: Equatable> {
         
         print("old capacity = \(oldCapacity), new capacity = \(newCapacity)")
     }
+}
+
+// ArrayList实现线性表协议
+extension ArrayList: List {
+    
+    func add(index: Int, element: E) {
+        
+        rangeCheckForAdd(index: index)
+        
+        ensureCapacity(capacity: _size + 1)
+        
+        for i in (index..<_size).reversed() {
+            elements[i+1] = elements[i]
+        }
+        
+        elements[index] = element
+        
+        _size += 1
+    }
+    
+    /// 清除所有元素
+    func clear() {
+        for i in 0..<_size {
+            elements[i] = nil
+        }
+        _size = 0
+    }
+    
+    /// 获取index位置的元素
+    func get(index: Int) -> E? {
+        
+        rangeCheck(index: index)
+        
+        return elements[index]
+    }
+    
+    func set(index: Int, element: E) -> E? {
+        rangeCheck(index: index)
+        
+        let old = elements[index]
+        elements[index] = element
+        return old
+    }
+    
+    func remove(index: Int) -> E? {
+        rangeCheck(index: index)
+        
+        let old = elements[index]
+        for i in index + 1..<_size-1 {
+            elements[i-1] = elements[i]
+        }
+        _size -= 1
+        elements[_size] = nil
+        return old
+    }
+    
+    func indexOf(element: E) -> Int {
+        for i in 0..<_size {
+            if (elements[i] == element) {
+                return i
+            }
+        }
+        return ELEMENT_NOT_FOUND
+    }
+    
     
 }
