@@ -6,3 +6,6 @@
 //
 
 import Foundation
+
+let arrList = ArrayList<Int>()
+arrList.add(index: 0, element: 11)
