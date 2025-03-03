@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F1C301A22D75CBCD001D77E8 /* CircleLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C301A12D75CBCD001D77E8 /* CircleLinkedList.swift */; };
+		F1C301A32D75CBCD001D77E8 /* CircleLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C301A12D75CBCD001D77E8 /* CircleLinkedList.swift */; };
+		F1C301A52D75D3DC001D77E8 /* CircleLinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C301A42D75D3DC001D77E8 /* CircleLinkedListTests.swift */; };
 		F1D9365D2D7445ED00AD1B8D /* ArrayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936582D7445ED00AD1B8D /* ArrayList.swift */; };
 		F1D9365E2D7445ED00AD1B8D /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936592D7445ED00AD1B8D /* LinkedList.swift */; };
 		F1D9365F2D7445ED00AD1B8D /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D9365A2D7445ED00AD1B8D /* List.swift */; };
@@ -45,6 +48,8 @@
 /* Begin PBXFileReference section */
 		F14BE15A2D69803700694250 /* Algo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Algo; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14BE16A2D6984C300694250 /* AlgoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlgoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1C301A12D75CBCD001D77E8 /* CircleLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLinkedList.swift; sourceTree = "<group>"; };
+		F1C301A42D75D3DC001D77E8 /* CircleLinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLinkedListTests.swift; sourceTree = "<group>"; };
 		F1D936582D7445ED00AD1B8D /* ArrayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayList.swift; sourceTree = "<group>"; };
 		F1D936592D7445ED00AD1B8D /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		F1D9365A2D7445ED00AD1B8D /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
@@ -96,6 +101,25 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		F1C3019F2D75CB41001D77E8 /* Complexity */ = {
+			isa = PBXGroup;
+			children = (
+				F1D936642D7445F200AD1B8D /* FibonacciTests.swift */,
+			);
+			path = Complexity;
+			sourceTree = "<group>";
+		};
+		F1C301A02D75CB47001D77E8 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				F1D936632D7445F200AD1B8D /* ArrayListTests.swift */,
+				F1D9366E2D7495E500AD1B8D /* LinkedListTests.swift */,
+				F1D936872D7563D500AD1B8D /* VirtualHeadNodeLinkedListTests.swift */,
+				F1C301A42D75D3DC001D77E8 /* CircleLinkedListTests.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
 		F1D9365C2D7445ED00AD1B8D /* Algo */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,10 +133,8 @@
 		F1D936652D7445F200AD1B8D /* AlgoTests */ = {
 			isa = PBXGroup;
 			children = (
-				F1D936642D7445F200AD1B8D /* FibonacciTests.swift */,
-				F1D936632D7445F200AD1B8D /* ArrayListTests.swift */,
-				F1D9366E2D7495E500AD1B8D /* LinkedListTests.swift */,
-				F1D936872D7563D500AD1B8D /* VirtualHeadNodeLinkedListTests.swift */,
+				F1C3019F2D75CB41001D77E8 /* Complexity */,
+				F1C301A02D75CB47001D77E8 /* List */,
 			);
 			path = AlgoTests;
 			sourceTree = "<group>";
@@ -151,6 +173,7 @@
 				F1D936582D7445ED00AD1B8D /* ArrayList.swift */,
 				F1D936592D7445ED00AD1B8D /* LinkedList.swift */,
 				F1D936842D755F6300AD1B8D /* VirtualHeadNodeLinkedList.swift */,
+				F1C301A12D75CBCD001D77E8 /* CircleLinkedList.swift */,
 			);
 			path = Course;
 			sourceTree = "<group>";
@@ -257,6 +280,7 @@
 				F1D936602D7445ED00AD1B8D /* main.swift in Sources */,
 				F1D9367D2D754D1F00AD1B8D /* Solution206.swift in Sources */,
 				F1D936832D75588000AD1B8D /* Solution141.swift in Sources */,
+				F1C301A22D75CBCD001D77E8 /* CircleLinkedList.swift in Sources */,
 				F1D936852D755F6300AD1B8D /* VirtualHeadNodeLinkedList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,10 +289,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1C301A52D75D3DC001D77E8 /* CircleLinkedListTests.swift in Sources */,
 				F1D9367C2D754D1F00AD1B8D /* Solution206.swift in Sources */,
 				F1D936702D74961800AD1B8D /* LinkedList.swift in Sources */,
 				F1D9366B2D7446FF00AD1B8D /* Fibonacci.swift in Sources */,
 				F1D936822D75588000AD1B8D /* Solution141.swift in Sources */,
+				F1C301A32D75CBCD001D77E8 /* CircleLinkedList.swift in Sources */,
 				F1D936882D7563D500AD1B8D /* VirtualHeadNodeLinkedListTests.swift in Sources */,
 				F1D936712D74969700AD1B8D /* List.swift in Sources */,
 				F1D936862D755F6300AD1B8D /* VirtualHeadNodeLinkedList.swift in Sources */,
