@@ -32,6 +32,7 @@ class ArrayList<E: Equatable> {
         }
         // 扩容1.5倍
         // 位运算，右移一位，相当于除以2
+        // 扩容倍数和所容倍数的乘积如果是1，会出现复杂度震荡，避开即可
         let newCapacity = oldCapacity + (oldCapacity >> 1)
         var newElements = [E?](repeating: nil, count: newCapacity)
         
@@ -41,6 +42,20 @@ class ArrayList<E: Equatable> {
         self.elements = newElements
         
         print("old capacity = \(oldCapacity), new capacity = \(newCapacity)")
+    }
+    
+    /// 缩容
+    private func trim() {
+        let capacity = elements.count
+        let newCapacity = capacity >> 1;
+        if (_size >= (newCapacity) && capacity < DEFAULT_CAPACITY ) { return }
+        
+        print("trim old capacity = \(capacity), new capacity = \(newCapacity)")
+
+        var newElements = [E?](repeating: nil, count: newCapacity)
+        for i in 0..<_size {
+            newElements[i] = elements[i]
+        }
     }
 }
 
@@ -95,6 +110,9 @@ extension ArrayList: List {
         }
         _size -= 1
         elements[_size] = nil
+        
+        trim()
+        
         return old
     }
     
@@ -106,6 +124,5 @@ extension ArrayList: List {
         }
         return ELEMENT_NOT_FOUND
     }
-    
     
 }
