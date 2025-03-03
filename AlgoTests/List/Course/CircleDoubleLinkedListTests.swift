@@ -19,9 +19,9 @@ struct CircleDoubleLinkedListTests {
         list.add(index: 0, element: 55) // [55, 11, 22, 33, 44]
         list.add(index: 2, element: 66) // [55, 11, 66, 22, 33, 44]
         list.add(index: list.size(), element: 77) // [55, 11, 66, 22, 33, 44, 77]
-        let _ = list.remove(index: 0) // [11, 66, 22, 33, 44, 77]
-        let _ = list.remove(index: 2) // [11, 66, 33, 44, 77]
-        let _ = list.remove(index: list.size() - 1) // [11, 66, 33, 44]
+        _ = list.remove(index: 0) // [11, 66, 22, 33, 44, 77]
+        _ = list.remove(index: 2) // [11, 66, 33, 44, 77]
+        _ = list.remove(index: list.size() - 1) // [11, 66, 33, 44]
         
         assert(list.size() == 4)
         assert(list.get(index: 0) == 11)
@@ -34,7 +34,7 @@ struct CircleDoubleLinkedListTests {
         
         let list = CircleLinkedList<Int>()
         list.add(element: 11) // [11]
-        let _ = list.remove(index: 0) // [11, 66, 22, 33, 44, 77]
+        _ = list.remove(index: 0) // [11, 66, 22, 33, 44, 77]
         
         assert(list.size() == 0)
     }
