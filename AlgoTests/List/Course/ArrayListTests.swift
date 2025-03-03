@@ -34,7 +34,7 @@ struct ArrayListTests {
         arrList.add(element: 10)
         arrList.add(element: 11)
         
-        let _ = arrList.remove(index: 0)
+        _ = arrList.remove(index: 0)
         let ret = arrList.get(index: 0)
         let want = 8
         assert(ret == want, "array size want \(want), but got \(ret ?? -1)")
