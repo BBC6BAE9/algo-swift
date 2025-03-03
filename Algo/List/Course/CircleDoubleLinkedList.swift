@@ -16,6 +16,9 @@ class CircleDoubleLinkedList<E: Equatable> {
     
     private var last: Node<E>?
     
+    ///【约瑟夫问题】【成员变量】current指针，指向某个节点
+    var current: Node<E>?
+    
     /// 获取index位置对应的节点对象
     private func node(index: Int) -> Node<E>? {
         
@@ -75,52 +78,33 @@ extension CircleDoubleLinkedList: List {
     
     func remove(index: Int) -> E? {
         rangeCheck(index: index)
-        
-        let node = node(index: index)
-        let prev = node?.prev
-        let next = node?.next
-
-        if (prev == nil) {
-            first = next
-        }else{
-            prev?.next = next
-        }
-        
-        if (next == nil) {
-            last = prev
-        }else{
-            next?.prev = prev
-        }
-    
-        _size -= 1
-        return node?.element
+        return remove(node: node(index: index))
     }
     
     func add(index: Int, element: E) {
         rangeCheckForAdd(index: index)
         
         if index == _size {
-            
             let oldLast = last
-            last = Node(prev: oldLast, element: element, next: nil)
+            last = Node(prev: oldLast, element: element, next: first)
             
             if oldLast == nil {
                 first = last
+                first?.next = first
+                first?.prev = first
             }else{
                 oldLast?.next = last
+                first?.prev = last  
             }
         }else{
             let next = node(index: index)
             let prev = next?.prev
-            
             let node = Node(prev: prev, element: element, next: next)
-            
             next?.prev = node
+            prev?.next = node
             
-            if (prev == nil) {
+            if (index == 0) {
                 first = node
-            }else{
-                prev?.next = node
             }
         }
         
@@ -138,4 +122,59 @@ extension CircleDoubleLinkedList: List {
         return ELEMENT_NOT_FOUND
     }
 
+    private func remove(node: Node<E>?) -> E? {
+        if _size == 1 {
+            first = nil
+            last = nil
+        }else{
+            let prev = node?.prev
+            let next = node?.next
+            prev?.next = next
+            next?.prev = prev
+            
+            if (node === first) {
+                first = next
+            }
+            
+            if (node === last) {
+                last = prev
+            }
+        }
+        
+        _size -= 1
+        return node?.element
+    }
 }
+
+extension CircleDoubleLinkedList {
+
+    /// 【约瑟夫问题】【函数】 reset() 让current指向头节点first
+    func reset() {
+        current = first
+    }
+
+    /// 【约瑟夫问题】【函数】next() 让current往后走一步，也就是current = current.next
+    func next() -> E? {
+        if current == nil { return nil }
+        current = current?.next
+        return current?.element
+    }
+
+    /// 【约瑟夫问题】【函数】remove() 删除current指向的节点，删除成功后让current指向下一个节点
+    func remove() -> E? {
+        if current == nil { return nil }
+        
+        let next = current?.next;
+        let element = remove(node: current)
+        
+        if _size == 0 {
+            current = nil
+        }else{
+            current = next
+        }
+        
+        return element
+    }
+    
+}
+
