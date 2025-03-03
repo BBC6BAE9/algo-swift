@@ -1,16 +1,16 @@
 //
-//  LinkedListTests.swift
+//  VirtualHeadNodeVirtualHeadNodeLinkedListTests.swift
 //  AlgoTests
 //
-//  Created by hong on 3/2/25.
+//  Created by hong on 3/3/25.
 //
 
 import Testing
 
-struct LinkedListTests {
+struct VirtualHeadNodeVirtualHeadNodeLinkedListTests {
 
     @Test func testAdd1() async throws {
-        let arrList = LinkedList<Int>()
+        let arrList = VirtualHeadNodeLinkedList<Int>()
         arrList.add(element: 11)
         let ret = arrList.get(index: 0)
         let want = 11
@@ -18,7 +18,7 @@ struct LinkedListTests {
     }
     
     @Test func testAdd2() async throws {
-        let arrList = LinkedList<Int>()
+        let arrList = VirtualHeadNodeLinkedList<Int>()
         arrList.add(element: 11)
         let ret = arrList.size()
         let want = 1
@@ -26,7 +26,7 @@ struct LinkedListTests {
     }
     
     @Test func testAdd3() async throws {
-        let arrList = LinkedList<Int>()
+        let arrList = VirtualHeadNodeLinkedList<Int>()
         
         arrList.add(element: 7)
         arrList.add(element: 8)
@@ -43,7 +43,7 @@ struct LinkedListTests {
     
     
     @Test func testAdd4() async throws {
-        let arrList = LinkedList<Int>()
+        let arrList = VirtualHeadNodeLinkedList<Int>()
         
         for i in 0..<20 {
             arrList.add(element: i)
@@ -72,7 +72,7 @@ struct LinkedListTests {
             }
         }
         
-        let arrList = LinkedList<Person>()
+        let arrList = VirtualHeadNodeLinkedList<Person>()
         
         for i in 0..<20 {
             arrList.add(element: Person(name: "\(i)"))
@@ -81,5 +81,6 @@ struct LinkedListTests {
         arrList.clear()
         assert(arrList.size() == 0)
     }
+
 
 }

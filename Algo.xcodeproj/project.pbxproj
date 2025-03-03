@@ -19,6 +19,15 @@
 		F1D9366F2D7495E500AD1B8D /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D9366E2D7495E500AD1B8D /* LinkedListTests.swift */; };
 		F1D936702D74961800AD1B8D /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936592D7445ED00AD1B8D /* LinkedList.swift */; };
 		F1D936712D74969700AD1B8D /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D9365A2D7445ED00AD1B8D /* List.swift */; };
+		F1D936792D754A2000AD1B8D /* Solution237.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936782D754A2000AD1B8D /* Solution237.swift */; };
+		F1D9367A2D754A2000AD1B8D /* Solution237.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936782D754A2000AD1B8D /* Solution237.swift */; };
+		F1D9367C2D754D1F00AD1B8D /* Solution206.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D9367B2D754D1F00AD1B8D /* Solution206.swift */; };
+		F1D9367D2D754D1F00AD1B8D /* Solution206.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D9367B2D754D1F00AD1B8D /* Solution206.swift */; };
+		F1D936822D75588000AD1B8D /* Solution141.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936812D75588000AD1B8D /* Solution141.swift */; };
+		F1D936832D75588000AD1B8D /* Solution141.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936812D75588000AD1B8D /* Solution141.swift */; };
+		F1D936852D755F6300AD1B8D /* VirtualHeadNodeLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936842D755F6300AD1B8D /* VirtualHeadNodeLinkedList.swift */; };
+		F1D936862D755F6300AD1B8D /* VirtualHeadNodeLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936842D755F6300AD1B8D /* VirtualHeadNodeLinkedList.swift */; };
+		F1D936882D7563D500AD1B8D /* VirtualHeadNodeLinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936872D7563D500AD1B8D /* VirtualHeadNodeLinkedListTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +53,11 @@
 		F1D936642D7445F200AD1B8D /* FibonacciTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FibonacciTests.swift; sourceTree = "<group>"; };
 		F1D936692D7446E300AD1B8D /* Fibonacci.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fibonacci.swift; sourceTree = "<group>"; };
 		F1D9366E2D7495E500AD1B8D /* LinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListTests.swift; sourceTree = "<group>"; };
+		F1D936782D754A2000AD1B8D /* Solution237.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solution237.swift; sourceTree = "<group>"; };
+		F1D9367B2D754D1F00AD1B8D /* Solution206.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solution206.swift; sourceTree = "<group>"; };
+		F1D936812D75588000AD1B8D /* Solution141.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solution141.swift; sourceTree = "<group>"; };
+		F1D936842D755F6300AD1B8D /* VirtualHeadNodeLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualHeadNodeLinkedList.swift; sourceTree = "<group>"; };
+		F1D936872D7563D500AD1B8D /* VirtualHeadNodeLinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualHeadNodeLinkedListTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,11 +99,9 @@
 		F1D9365C2D7445ED00AD1B8D /* Algo */ = {
 			isa = PBXGroup;
 			children = (
-				F1D936692D7446E300AD1B8D /* Fibonacci.swift */,
-				F1D936582D7445ED00AD1B8D /* ArrayList.swift */,
-				F1D936592D7445ED00AD1B8D /* LinkedList.swift */,
-				F1D9365A2D7445ED00AD1B8D /* List.swift */,
 				F1D9365B2D7445ED00AD1B8D /* main.swift */,
+				F1D9367E2D754E5800AD1B8D /* Complexity */,
+				F1D9367F2D754E7400AD1B8D /* List */,
 			);
 			path = Algo;
 			sourceTree = "<group>";
@@ -100,8 +112,47 @@
 				F1D936642D7445F200AD1B8D /* FibonacciTests.swift */,
 				F1D936632D7445F200AD1B8D /* ArrayListTests.swift */,
 				F1D9366E2D7495E500AD1B8D /* LinkedListTests.swift */,
+				F1D936872D7563D500AD1B8D /* VirtualHeadNodeLinkedListTests.swift */,
 			);
 			path = AlgoTests;
+			sourceTree = "<group>";
+		};
+		F1D936762D7549B600AD1B8D /* LeetCode */ = {
+			isa = PBXGroup;
+			children = (
+				F1D936782D754A2000AD1B8D /* Solution237.swift */,
+				F1D9367B2D754D1F00AD1B8D /* Solution206.swift */,
+				F1D936812D75588000AD1B8D /* Solution141.swift */,
+			);
+			path = LeetCode;
+			sourceTree = "<group>";
+		};
+		F1D9367E2D754E5800AD1B8D /* Complexity */ = {
+			isa = PBXGroup;
+			children = (
+				F1D936692D7446E300AD1B8D /* Fibonacci.swift */,
+			);
+			path = Complexity;
+			sourceTree = "<group>";
+		};
+		F1D9367F2D754E7400AD1B8D /* List */ = {
+			isa = PBXGroup;
+			children = (
+				F1D936802D754EAA00AD1B8D /* Course */,
+				F1D936762D7549B600AD1B8D /* LeetCode */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		F1D936802D754EAA00AD1B8D /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				F1D9365A2D7445ED00AD1B8D /* List.swift */,
+				F1D936582D7445ED00AD1B8D /* ArrayList.swift */,
+				F1D936592D7445ED00AD1B8D /* LinkedList.swift */,
+				F1D936842D755F6300AD1B8D /* VirtualHeadNodeLinkedList.swift */,
+			);
+			path = Course;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,9 +251,13 @@
 			files = (
 				F1D9366A2D7446E300AD1B8D /* Fibonacci.swift in Sources */,
 				F1D9365D2D7445ED00AD1B8D /* ArrayList.swift in Sources */,
+				F1D9367A2D754A2000AD1B8D /* Solution237.swift in Sources */,
 				F1D9365E2D7445ED00AD1B8D /* LinkedList.swift in Sources */,
 				F1D9365F2D7445ED00AD1B8D /* List.swift in Sources */,
 				F1D936602D7445ED00AD1B8D /* main.swift in Sources */,
+				F1D9367D2D754D1F00AD1B8D /* Solution206.swift in Sources */,
+				F1D936832D75588000AD1B8D /* Solution141.swift in Sources */,
+				F1D936852D755F6300AD1B8D /* VirtualHeadNodeLinkedList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,12 +265,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1D9367C2D754D1F00AD1B8D /* Solution206.swift in Sources */,
 				F1D936702D74961800AD1B8D /* LinkedList.swift in Sources */,
 				F1D9366B2D7446FF00AD1B8D /* Fibonacci.swift in Sources */,
+				F1D936822D75588000AD1B8D /* Solution141.swift in Sources */,
+				F1D936882D7563D500AD1B8D /* VirtualHeadNodeLinkedListTests.swift in Sources */,
 				F1D936712D74969700AD1B8D /* List.swift in Sources */,
+				F1D936862D755F6300AD1B8D /* VirtualHeadNodeLinkedList.swift in Sources */,
 				F1D9366F2D7495E500AD1B8D /* LinkedListTests.swift in Sources */,
 				F1D936612D7445ED00AD1B8D /* ArrayList.swift in Sources */,
 				F1D936672D7445F200AD1B8D /* ArrayListTests.swift in Sources */,
+				F1D936792D754A2000AD1B8D /* Solution237.swift in Sources */,
 				F1D936682D7445F200AD1B8D /* FibonacciTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
