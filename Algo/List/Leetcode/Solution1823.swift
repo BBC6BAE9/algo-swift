@@ -28,10 +28,10 @@ class Solution1823 {
         while list.size() > 1 {
             if k > 1 {
                 for _ in 0..<k-1 {
-                    let _ = list.next()
+                    _ = list.next()
                 }
             }
-            let _ = list.remove()
+            _ = list.remove()
         }
         
         return list.get(index: 0)!
