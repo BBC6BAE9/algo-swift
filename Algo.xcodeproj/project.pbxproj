@@ -16,6 +16,10 @@
 		F1C301AD2D75DC59001D77E8 /* ArrayListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C301A82D75DC59001D77E8 /* ArrayListTests.swift */; };
 		F1C301AF2D75DD55001D77E8 /* CircleDoubleLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C301AE2D75DD55001D77E8 /* CircleDoubleLinkedList.swift */; };
 		F1C301B02D75DD55001D77E8 /* CircleDoubleLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C301AE2D75DD55001D77E8 /* CircleDoubleLinkedList.swift */; };
+		F1C301B22D75E130001D77E8 /* CircleDoubleLinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C301B12D75E130001D77E8 /* CircleDoubleLinkedListTests.swift */; };
+		F1C301B42D75E435001D77E8 /* Solution1823.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C301B32D75E435001D77E8 /* Solution1823.swift */; };
+		F1C301B52D75E435001D77E8 /* Solution1823.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C301B32D75E435001D77E8 /* Solution1823.swift */; };
+		F1C301B92D75EDC2001D77E8 /* Solution1823Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C301B82D75EDC2001D77E8 /* Solution1823Tests.swift */; };
 		F1D9365D2D7445ED00AD1B8D /* ArrayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936582D7445ED00AD1B8D /* ArrayList.swift */; };
 		F1D9365E2D7445ED00AD1B8D /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936592D7445ED00AD1B8D /* LinkedList.swift */; };
 		F1D9365F2D7445ED00AD1B8D /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D9365A2D7445ED00AD1B8D /* List.swift */; };
@@ -60,6 +64,9 @@
 		F1C301A92D75DC59001D77E8 /* LinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListTests.swift; sourceTree = "<group>"; };
 		F1C301AA2D75DC59001D77E8 /* VirtualHeadNodeLinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualHeadNodeLinkedListTests.swift; sourceTree = "<group>"; };
 		F1C301AE2D75DD55001D77E8 /* CircleDoubleLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleDoubleLinkedList.swift; sourceTree = "<group>"; };
+		F1C301B12D75E130001D77E8 /* CircleDoubleLinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleDoubleLinkedListTests.swift; sourceTree = "<group>"; };
+		F1C301B32D75E435001D77E8 /* Solution1823.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solution1823.swift; sourceTree = "<group>"; };
+		F1C301B82D75EDC2001D77E8 /* Solution1823Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solution1823Tests.swift; sourceTree = "<group>"; };
 		F1D936582D7445ED00AD1B8D /* ArrayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayList.swift; sourceTree = "<group>"; };
 		F1D936592D7445ED00AD1B8D /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		F1D9365A2D7445ED00AD1B8D /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
@@ -120,13 +127,31 @@
 		F1C301A02D75CB47001D77E8 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				F1C301B62D75ED99001D77E8 /* Course */,
+				F1C301B72D75EDA7001D77E8 /* Leetcode */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		F1C301B62D75ED99001D77E8 /* Course */ = {
+			isa = PBXGroup;
+			children = (
 				F1C301A82D75DC59001D77E8 /* ArrayListTests.swift */,
 				F1C301A92D75DC59001D77E8 /* LinkedListTests.swift */,
 				F1C301AA2D75DC59001D77E8 /* VirtualHeadNodeLinkedListTests.swift */,
 				F1C301A42D75D3DC001D77E8 /* CircleLinkedListTests.swift */,
 				F1D9368C2D75AD4A00AD1B8D /* DoubleLinkedListTests.swift */,
+				F1C301B12D75E130001D77E8 /* CircleDoubleLinkedListTests.swift */,
 			);
-			path = List;
+			path = Course;
+			sourceTree = "<group>";
+		};
+		F1C301B72D75EDA7001D77E8 /* Leetcode */ = {
+			isa = PBXGroup;
+			children = (
+				F1C301B82D75EDC2001D77E8 /* Solution1823Tests.swift */,
+			);
+			path = Leetcode;
 			sourceTree = "<group>";
 		};
 		F1D9365C2D7445ED00AD1B8D /* Algo */ = {
@@ -148,14 +173,15 @@
 			path = AlgoTests;
 			sourceTree = "<group>";
 		};
-		F1D936762D7549B600AD1B8D /* LeetCode */ = {
+		F1D936762D7549B600AD1B8D /* Leetcode */ = {
 			isa = PBXGroup;
 			children = (
 				F1D936782D754A2000AD1B8D /* Solution237.swift */,
 				F1D9367B2D754D1F00AD1B8D /* Solution206.swift */,
 				F1D936812D75588000AD1B8D /* Solution141.swift */,
+				F1C301B32D75E435001D77E8 /* Solution1823.swift */,
 			);
-			path = LeetCode;
+			path = Leetcode;
 			sourceTree = "<group>";
 		};
 		F1D9367E2D754E5800AD1B8D /* Complexity */ = {
@@ -170,7 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				F1D936802D754EAA00AD1B8D /* Course */,
-				F1D936762D7549B600AD1B8D /* LeetCode */,
+				F1D936762D7549B600AD1B8D /* Leetcode */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -284,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1D9366A2D7446E300AD1B8D /* Fibonacci.swift in Sources */,
+				F1C301B52D75E435001D77E8 /* Solution1823.swift in Sources */,
 				F1D9365D2D7445ED00AD1B8D /* ArrayList.swift in Sources */,
 				F1D9367A2D754A2000AD1B8D /* Solution237.swift in Sources */,
 				F1D9365E2D7445ED00AD1B8D /* LinkedList.swift in Sources */,
@@ -302,11 +329,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1C301B92D75EDC2001D77E8 /* Solution1823Tests.swift in Sources */,
 				F1C301A52D75D3DC001D77E8 /* CircleLinkedListTests.swift in Sources */,
 				F1D9367C2D754D1F00AD1B8D /* Solution206.swift in Sources */,
 				F1D936702D74961800AD1B8D /* LinkedList.swift in Sources */,
 				F1D9366B2D7446FF00AD1B8D /* Fibonacci.swift in Sources */,
+				F1C301B42D75E435001D77E8 /* Solution1823.swift in Sources */,
 				F1D936822D75588000AD1B8D /* Solution141.swift in Sources */,
+				F1C301B22D75E130001D77E8 /* CircleDoubleLinkedListTests.swift in Sources */,
 				F1C301A32D75CBCD001D77E8 /* CircleLinkedList.swift in Sources */,
 				F1D9368D2D75AD4A00AD1B8D /* DoubleLinkedListTests.swift in Sources */,
 				F1C301AB2D75DC59001D77E8 /* VirtualHeadNodeLinkedListTests.swift in Sources */,
