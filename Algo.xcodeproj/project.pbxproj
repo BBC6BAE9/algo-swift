@@ -28,6 +28,9 @@
 		F1D936852D755F6300AD1B8D /* VirtualHeadNodeLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936842D755F6300AD1B8D /* VirtualHeadNodeLinkedList.swift */; };
 		F1D936862D755F6300AD1B8D /* VirtualHeadNodeLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936842D755F6300AD1B8D /* VirtualHeadNodeLinkedList.swift */; };
 		F1D936882D7563D500AD1B8D /* VirtualHeadNodeLinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936872D7563D500AD1B8D /* VirtualHeadNodeLinkedListTests.swift */; };
+		F1D9368A2D757F8C00AD1B8D /* DoubleLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936892D757F8C00AD1B8D /* DoubleLinkedList.swift */; };
+		F1D9368B2D757F8C00AD1B8D /* DoubleLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936892D757F8C00AD1B8D /* DoubleLinkedList.swift */; };
+		F1D9368D2D75AD4A00AD1B8D /* DoubleLinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D9368C2D75AD4A00AD1B8D /* DoubleLinkedListTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +61,8 @@
 		F1D936812D75588000AD1B8D /* Solution141.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solution141.swift; sourceTree = "<group>"; };
 		F1D936842D755F6300AD1B8D /* VirtualHeadNodeLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualHeadNodeLinkedList.swift; sourceTree = "<group>"; };
 		F1D936872D7563D500AD1B8D /* VirtualHeadNodeLinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualHeadNodeLinkedListTests.swift; sourceTree = "<group>"; };
+		F1D936892D757F8C00AD1B8D /* DoubleLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleLinkedList.swift; sourceTree = "<group>"; };
+		F1D9368C2D75AD4A00AD1B8D /* DoubleLinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleLinkedListTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +118,7 @@
 				F1D936632D7445F200AD1B8D /* ArrayListTests.swift */,
 				F1D9366E2D7495E500AD1B8D /* LinkedListTests.swift */,
 				F1D936872D7563D500AD1B8D /* VirtualHeadNodeLinkedListTests.swift */,
+				F1D9368C2D75AD4A00AD1B8D /* DoubleLinkedListTests.swift */,
 			);
 			path = AlgoTests;
 			sourceTree = "<group>";
@@ -151,6 +157,7 @@
 				F1D936582D7445ED00AD1B8D /* ArrayList.swift */,
 				F1D936592D7445ED00AD1B8D /* LinkedList.swift */,
 				F1D936842D755F6300AD1B8D /* VirtualHeadNodeLinkedList.swift */,
+				F1D936892D757F8C00AD1B8D /* DoubleLinkedList.swift */,
 			);
 			path = Course;
 			sourceTree = "<group>";
@@ -254,6 +261,7 @@
 				F1D9367A2D754A2000AD1B8D /* Solution237.swift in Sources */,
 				F1D9365E2D7445ED00AD1B8D /* LinkedList.swift in Sources */,
 				F1D9365F2D7445ED00AD1B8D /* List.swift in Sources */,
+				F1D9368A2D757F8C00AD1B8D /* DoubleLinkedList.swift in Sources */,
 				F1D936602D7445ED00AD1B8D /* main.swift in Sources */,
 				F1D9367D2D754D1F00AD1B8D /* Solution206.swift in Sources */,
 				F1D936832D75588000AD1B8D /* Solution141.swift in Sources */,
@@ -270,8 +278,10 @@
 				F1D9366B2D7446FF00AD1B8D /* Fibonacci.swift in Sources */,
 				F1D936822D75588000AD1B8D /* Solution141.swift in Sources */,
 				F1D936882D7563D500AD1B8D /* VirtualHeadNodeLinkedListTests.swift in Sources */,
+				F1D9368D2D75AD4A00AD1B8D /* DoubleLinkedListTests.swift in Sources */,
 				F1D936712D74969700AD1B8D /* List.swift in Sources */,
 				F1D936862D755F6300AD1B8D /* VirtualHeadNodeLinkedList.swift in Sources */,
+				F1D9368B2D757F8C00AD1B8D /* DoubleLinkedList.swift in Sources */,
 				F1D9366F2D7495E500AD1B8D /* LinkedListTests.swift in Sources */,
 				F1D936612D7445ED00AD1B8D /* ArrayList.swift in Sources */,
 				F1D936672D7445F200AD1B8D /* ArrayListTests.swift in Sources */,
