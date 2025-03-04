@@ -45,17 +45,19 @@ class ArrayList<E: Equatable> {
     }
     
     /// 缩容
+    // TODO: 缩容量的这个函数可能有Bug，需要完善测试用例来检查
     private func trim() {
         let capacity = elements.count
         let newCapacity = capacity >> 1;
-        if (_size >= (newCapacity) && capacity < DEFAULT_CAPACITY ) { return }
+        if (_size >= (newCapacity) && capacity > DEFAULT_CAPACITY ) { return }
         
-        print("trim old capacity = \(capacity), new capacity = \(newCapacity)")
+        print("trim: size = \(_size), old capacity = \(capacity), new capacity = \(newCapacity)")
 
         var newElements = [E?](repeating: nil, count: newCapacity)
         for i in 0..<_size {
             newElements[i] = elements[i]
         }
+        self.elements = newElements
     }
 }
 
@@ -105,8 +107,8 @@ extension ArrayList: List {
         rangeCheck(index: index)
         
         let old = elements[index]
-        for i in index + 1..<_size-1 {
-            elements[i-1] = elements[i]
+        for i in index..<_size-1 {
+            elements[i] = elements[i+1]
         }
         _size -= 1
         elements[_size] = nil
@@ -126,3 +128,7 @@ extension ArrayList: List {
     }
     
 }
+
+// ArrayList的进一步优化
+// 在数组的前面插入或删除，需要大量的转移元素
+// 使用一个int first存储首元素的位置

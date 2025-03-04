@@ -1,16 +1,16 @@
 //
-//  ArrayListTests.swift
+//  DoubleLinkedListTests.swift
 //  AlgoTests
 //
-//  Created by hong on 3/2/25.
+//  Created by hong on 3/3/25.
 //
 
 import Testing
 
-struct ArrayListTests {
+struct DoubleLinkedListTests {
 
     @Test func testAdd1() async throws {
-        let arrList = ArrayList<Int>()
+        let arrList = DoubleLinkedList<Int>()
         arrList.add(element: 11)
         let ret = arrList.get(index: 0)
         let want = 11
@@ -18,7 +18,7 @@ struct ArrayListTests {
     }
     
     @Test func testAdd2() async throws {
-        let arrList = ArrayList<Int>()
+        let arrList = DoubleLinkedList<Int>()
         arrList.add(element: 11)
         let ret = arrList.size()
         let want = 1
@@ -26,7 +26,8 @@ struct ArrayListTests {
     }
     
     @Test func testAdd3() async throws {
-        let arrList = ArrayList<Int>()
+        
+        let arrList = DoubleLinkedList<Int>()
         
         arrList.add(element: 7)
         arrList.add(element: 8)
@@ -34,7 +35,7 @@ struct ArrayListTests {
         arrList.add(element: 10)
         arrList.add(element: 11)
         
-        let _ = arrList.remove(index: 0)
+        _ = arrList.remove(index: 0)
         let ret = arrList.get(index: 0)
         let want = 8
         assert(ret == want, "array size want \(want), but got \(ret ?? -1)")
@@ -43,7 +44,7 @@ struct ArrayListTests {
     
     
     @Test func testAdd4() async throws {
-        let arrList = ArrayList<Int>(capacity: 10)
+        let arrList = DoubleLinkedList<Int>()
         
         for i in 0..<20 {
             arrList.add(element: i)
@@ -72,7 +73,7 @@ struct ArrayListTests {
             }
         }
         
-        let arrList = ArrayList<Person>(capacity: 10)
+        let arrList = DoubleLinkedList<Person>()
         
         for i in 0..<20 {
             arrList.add(element: Person(name: "\(i)"))
@@ -82,5 +83,5 @@ struct ArrayListTests {
         assert(arrList.size() == 0)
     }
 
-}
 
+}
