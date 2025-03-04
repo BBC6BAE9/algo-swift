@@ -31,6 +31,8 @@
 		F1D9368A2D757F8C00AD1B8D /* DoubleLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936892D757F8C00AD1B8D /* DoubleLinkedList.swift */; };
 		F1D9368B2D757F8C00AD1B8D /* DoubleLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936892D757F8C00AD1B8D /* DoubleLinkedList.swift */; };
 		F1D9368D2D75AD4A00AD1B8D /* DoubleLinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D9368C2D75AD4A00AD1B8D /* DoubleLinkedListTests.swift */; };
+		F1F10F472D7694EC00527D54 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F10F462D7694EC00527D54 /* Queue.swift */; };
+		F1F10F482D7694EC00527D54 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F10F462D7694EC00527D54 /* Queue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,6 +65,7 @@
 		F1D936872D7563D500AD1B8D /* VirtualHeadNodeLinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualHeadNodeLinkedListTests.swift; sourceTree = "<group>"; };
 		F1D936892D757F8C00AD1B8D /* DoubleLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleLinkedList.swift; sourceTree = "<group>"; };
 		F1D9368C2D75AD4A00AD1B8D /* DoubleLinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleLinkedListTests.swift; sourceTree = "<group>"; };
+		F1F10F462D7694EC00527D54 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +161,7 @@
 				F1D936592D7445ED00AD1B8D /* LinkedList.swift */,
 				F1D936842D755F6300AD1B8D /* VirtualHeadNodeLinkedList.swift */,
 				F1D936892D757F8C00AD1B8D /* DoubleLinkedList.swift */,
+				F1F10F462D7694EC00527D54 /* Queue.swift */,
 			);
 			path = Course;
 			sourceTree = "<group>";
@@ -259,6 +263,7 @@
 				F1D9366A2D7446E300AD1B8D /* Fibonacci.swift in Sources */,
 				F1D9365D2D7445ED00AD1B8D /* ArrayList.swift in Sources */,
 				F1D9367A2D754A2000AD1B8D /* Solution237.swift in Sources */,
+				F1F10F482D7694EC00527D54 /* Queue.swift in Sources */,
 				F1D9365E2D7445ED00AD1B8D /* LinkedList.swift in Sources */,
 				F1D9365F2D7445ED00AD1B8D /* List.swift in Sources */,
 				F1D9368A2D757F8C00AD1B8D /* DoubleLinkedList.swift in Sources */,
@@ -283,6 +288,7 @@
 				F1D936862D755F6300AD1B8D /* VirtualHeadNodeLinkedList.swift in Sources */,
 				F1D9368B2D757F8C00AD1B8D /* DoubleLinkedList.swift in Sources */,
 				F1D9366F2D7495E500AD1B8D /* LinkedListTests.swift in Sources */,
+				F1F10F472D7694EC00527D54 /* Queue.swift in Sources */,
 				F1D936612D7445ED00AD1B8D /* ArrayList.swift in Sources */,
 				F1D936672D7445F200AD1B8D /* ArrayListTests.swift in Sources */,
 				F1D936792D754A2000AD1B8D /* Solution237.swift in Sources */,
