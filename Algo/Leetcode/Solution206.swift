@@ -11,46 +11,51 @@ import Foundation
 // 给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。
 
 class Solution206 {
-    // Definition for singly-linked list.
-    class ListNode {
-        public var val: Int
-        public var next: ListNode?
-        public init() { self.val = 0; self.next = nil; }
-        public init(_ val: Int) { self.val = val; self.next = nil; }
-        public init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
-    }
-    
-    // 递归的解决方法
-    func reverseList1(_ head: Solution206.ListNode?) -> Solution206.ListNode? {
-        if head == nil,
-           head?.next == nil // 头节点没有next，说明只有一个节点，反转之后还是自己
-        {
-            return head
-        }
-        
-        let newHead = reverseList1(head?.next)
-        head?.next?.next = head
-        head?.next = nil
-        return newHead
-    }
-    
-    func reverseList2(_ head: Solution206.ListNode?) -> Solution206.ListNode? {
+    /// 用本地的代码 LinkedList.Node 进行调试一下
+    func reverseList1(_ head: LinkedList<Int>.Node<Int>?) -> LinkedList<Int>.Node<Int>? {
         var head = head
-        if head == nil,
-           head?.next == nil // 头节点没有next，说明只有一个节点，反转之后还是自己
-        {
-            return head
+        // 处理【head指针为空】的情况和【链表没有的元素】的情况
+        if (head == nil) {
+            return nil
         }
         
-        var newHead: ListNode? = nil
+        if head?.next == nil {
+            return nil
+        }
+        
+        var newhead: LinkedList<Int>.Node<Int>?
+        
         while head != nil {
             let tmp = head?.next
-            head?.next = newHead
-            newHead = head
+            head?.next = newhead
+            newhead = head
             head = tmp
         }
         
-        return newHead
+        return newhead
     }
     
+    /// 用本地的代码 LinkedList.Node 进行调试一下
+    func reverseList2(_ head: LinkedList<Int>.Node<Int>?) -> LinkedList<Int>.Node<Int>? {
+        var head = head
+        // 处理【head指针为空】的情况和【链表没有的元素】的情况
+        if (head == nil) {
+            return nil
+        }
+        
+        if head?.next == nil {
+            return nil
+        }
+        
+        var newhead: LinkedList<Int>.Node<Int>?
+        
+        while head != nil {
+            let tmp = head?.next
+            head?.next = newhead
+            newhead = head
+            head = tmp
+        }
+        
+        return newhead
+    }
 }

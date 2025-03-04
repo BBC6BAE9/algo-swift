@@ -13,14 +13,14 @@ class LinkedList<E: Equatable> {
     
     var _size: Int = 0
 
-    private var first: Node<E>?
+    var head: Node<E>?
     
     /// 获取index位置对应的节点对象
     private func node(index: Int) -> Node<E>? {
         
         rangeCheckForAdd(index: index)
         
-        var node: Node<E>? = self.first
+        var node: Node<E>? = self.head
         
         for _ in 0..<index {
             node = node?.next
@@ -51,7 +51,7 @@ extension LinkedList: List {
     
     func clear() {
         _size = 0
-        self.first = nil
+        self.head = nil
     }
     
     func get(index: Int) -> E? {
@@ -68,9 +68,9 @@ extension LinkedList: List {
     func remove(index: Int) -> E? {
         rangeCheck(index: index)
         
-        var tmpnode = first
+        var tmpnode = head
         if index == 0 {
-            first = first?.next
+            head = head?.next
         } else {
             let prev = node(index: index - 1)
             tmpnode = prev?.next
@@ -85,7 +85,7 @@ extension LinkedList: List {
         rangeCheckForAdd(index: index)
         
         if index == 0 {
-            self.first = Node(element: element, next: first)
+            self.head = Node(element: element, next: head)
         } else {
             let prev = node(index: index - 1)
             prev?.next = Node(element: element, next: prev?.next)
@@ -95,7 +95,7 @@ extension LinkedList: List {
     }
     
     func indexOf(element: E) -> Int {
-        var node = first
+        var node = head
         for i in 0..<_size {
             if element == node?.element {
                 return i
@@ -104,5 +104,4 @@ extension LinkedList: List {
         }
         return ELEMENT_NOT_FOUND
     }
-
 }
