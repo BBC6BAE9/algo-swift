@@ -1,16 +1,16 @@
 //
-//  VirtualHeadNodeVirtualHeadNodeLinkedListTests.swift
+//  ArrayListTests.swift
 //  AlgoTests
 //
-//  Created by hong on 3/3/25.
+//  Created by hong on 3/2/25.
 //
 
 import Testing
 
-struct VirtualHeadNodeVirtualHeadNodeLinkedListTests {
+struct ArrayListTests {
 
     @Test func testAdd1() async throws {
-        let arrList = VirtualHeadNodeLinkedList<Int>()
+        let arrList = ArrayList<Int>()
         arrList.add(element: 11)
         let ret = arrList.get(index: 0)
         let want = 11
@@ -18,7 +18,7 @@ struct VirtualHeadNodeVirtualHeadNodeLinkedListTests {
     }
     
     @Test func testAdd2() async throws {
-        let arrList = VirtualHeadNodeLinkedList<Int>()
+        let arrList = ArrayList<Int>()
         arrList.add(element: 11)
         let ret = arrList.size()
         let want = 1
@@ -26,7 +26,7 @@ struct VirtualHeadNodeVirtualHeadNodeLinkedListTests {
     }
     
     @Test func testAdd3() async throws {
-        let arrList = VirtualHeadNodeLinkedList<Int>()
+        let arrList = ArrayList<Int>()
         
         arrList.add(element: 7)
         arrList.add(element: 8)
@@ -34,7 +34,7 @@ struct VirtualHeadNodeVirtualHeadNodeLinkedListTests {
         arrList.add(element: 10)
         arrList.add(element: 11)
         
-        let _ = arrList.remove(index: 0)
+        _ = arrList.remove(index: 0)
         let ret = arrList.get(index: 0)
         let want = 8
         assert(ret == want, "array size want \(want), but got \(ret ?? -1)")
@@ -43,7 +43,7 @@ struct VirtualHeadNodeVirtualHeadNodeLinkedListTests {
     
     
     @Test func testAdd4() async throws {
-        let arrList = VirtualHeadNodeLinkedList<Int>()
+        let arrList = ArrayList<Int>(capacity: 10)
         
         for i in 0..<20 {
             arrList.add(element: i)
@@ -72,7 +72,7 @@ struct VirtualHeadNodeVirtualHeadNodeLinkedListTests {
             }
         }
         
-        let arrList = VirtualHeadNodeLinkedList<Person>()
+        let arrList = ArrayList<Person>(capacity: 10)
         
         for i in 0..<20 {
             arrList.add(element: Person(name: "\(i)"))
@@ -82,5 +82,5 @@ struct VirtualHeadNodeVirtualHeadNodeLinkedListTests {
         assert(arrList.size() == 0)
     }
 
-
 }
+
