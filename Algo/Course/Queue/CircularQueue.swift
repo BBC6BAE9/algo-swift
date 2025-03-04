@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CircleQueue<E> {
+class CircularQueue<E> {
     
     private var _front = 0
     private var _size: Int
@@ -57,7 +57,7 @@ class CircleQueue<E> {
         // 位运算，右移一位，相当于除以2
         // 扩容倍数和所容倍数的乘积如果是1，会出现复杂度震荡，避开即可
         let newCapacity = oldCapacity + (oldCapacity >> 1)
-        var newElements: FixedSizeArray<E> = .init(capacity: newCapacity)
+        let newElements: FixedSizeArray<E> = .init(capacity: newCapacity)
         
         for i in 0..<_size {
             newElements[i] = elements[index(i)]
