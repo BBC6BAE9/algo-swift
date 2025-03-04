@@ -19,7 +19,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F14BE1692D6984C300694250"
+               BlueprintIdentifier = "F1F110B02D76B2C200527D54"
                BuildableName = "AlgoTests.xctest"
                BlueprintName = "AlgoTests"
                ReferencedContainer = "container:Algo.xcodeproj">

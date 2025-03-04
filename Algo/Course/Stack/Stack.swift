@@ -13,7 +13,7 @@ import Foundation
 /// LIFO：last in first out
 /// 栈的内部实现可以直接利用以前学过的数据结构
 /// 动态数组、链表都可以，两者操作最后一个元素，复杂度都是o(1)级别的，用哪个都可以
-class Stack<E:Equatable> {
+class Stack<E: Equatable> {
     
     private var list: ArrayList<E> = .init()
     
@@ -34,5 +34,9 @@ class Stack<E:Equatable> {
             return nil
         }
         return list.get(index: list.size() - 1)
+    }
+    
+    func isEmpty() -> Bool {
+        return size() == 0
     }
 }
