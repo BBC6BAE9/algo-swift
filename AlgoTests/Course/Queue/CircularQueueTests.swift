@@ -7,10 +7,10 @@
 
 import Testing
 
-struct CircleQueueTests {
+struct CircularQueueTests {
 
     @Test func testCircleQueue() async throws {
-        let queue = CircleQueue<Int>()
+        let queue = CircularQueue<Int>()
         queue.enQueue(1)
         queue.enQueue(2)
         queue.enQueue(3)

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// 用Swift 的高级数组模拟早期变成语言中数组的有限能力
 class FixedSizeArray<E> {
     
     private var elements: [E?]
@@ -26,6 +27,10 @@ class FixedSizeArray<E> {
             checkBounds(index)
             elements[index] = newValue
         }
+    }
+    
+    var length: Int {
+        return size()
     }
     
     func size() -> Int {
