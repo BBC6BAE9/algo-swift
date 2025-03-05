@@ -16,7 +16,7 @@ class Solution3 {
 //        var maxLength = 0
 //        var left = 0
 //        
-//        for right in 0..<characters.count {
+//        for right  in 0..<characters.count {
 //            let currentChar = characters[right]
 //            
 //            // 如果当前字符已经在集合中，移动左指针

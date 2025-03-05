@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+class Solution4 {
+    func findMedianSortedArrays(_ nums1: [Int], _ nums2: [Int]) -> Double {
+        return 0
+    }
+}

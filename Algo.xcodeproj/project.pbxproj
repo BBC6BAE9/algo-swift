@@ -55,6 +55,7 @@
 				Leetcode/Solution146.swift,
 				Leetcode/Solution150.swift,
 				Leetcode/Solution206.swift,
+				Leetcode/Solution215.swift,
 				Leetcode/Solution224.swift,
 				Leetcode/Solution232.swift,
 				Leetcode/Solution237.swift,
