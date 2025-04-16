@@ -52,7 +52,7 @@ class CircleDoubleLinkedList<E: Equatable> {
         }
         
         deinit {
-            print("node \(element) 被释放")
+            // print("node \(element) 被释放")
         }
     }
     

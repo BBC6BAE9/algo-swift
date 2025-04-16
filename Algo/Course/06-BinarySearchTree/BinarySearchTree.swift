@@ -58,9 +58,31 @@ class BinarySearchTree<T: Comparable> {
         guard let node = node else {
             return
         }
-        postorderTraversal(node: node.left)        
+        postorderTraversal(node: node.left)
         postorderTraversal(node: node.right)
         print(node.element)
+    }
+    
+    /// 层序遍历
+    func levelOrderTravrtsal() {
+        guard let root = root else {
+            return
+        }
+        let queue = Queue<Node<T>>()
+        queue.enQueue(element: root)
+        
+        while !queue.isEmpty() {
+            let node = queue.deQueue()!
+            print(node.element)
+            
+            if let leftNode = node.left {
+                queue.enQueue(element: leftNode)
+            }
+            
+            if let rightNode = node.right {
+                queue.enQueue(element: rightNode)
+            }
+        }
     }
     
     // TODO: 【迭代】二叉树的高度
@@ -173,7 +195,11 @@ class BinarySearchTree<T: Comparable> {
         }
     }
     
-    class Node<E: Comparable> {
+    class Node<E: Comparable>: Equatable {
+        static func == (lhs: BinarySearchTree<T>.Node<E>, rhs: BinarySearchTree<T>.Node<E>) -> Bool {
+            lhs.element == rhs.element
+        }
+        
         var element: E
         var left: Node<E>?
         var right: Node<E>?
