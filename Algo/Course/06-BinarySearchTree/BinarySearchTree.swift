@@ -84,13 +84,38 @@ class BinarySearchTree<T: Comparable> {
             }
         }
     }
-    
-    // TODO: 【迭代】二叉树的高度
+
+    // 【迭代】二叉树的高度
     func height() -> Int {
         guard let root = root else {
             return 0
         }
-        return 0
+         
+        var height = 0
+        
+        var levelSize = 1
+        
+        let queue = Queue<Node<T>>()
+        queue.enQueue(element: root)
+        
+        while !queue.isEmpty() {
+            let node = queue.deQueue()!
+            levelSize -= 1
+            if let leftNode = node.left {
+                queue.enQueue(element: leftNode)
+            }
+            
+            if let rightNode = node.right {
+                queue.enQueue(element: rightNode)
+            }
+            
+            if levelSize == 0 { // 意味着即将要访问下一层
+                levelSize = queue.size()
+                height += 1
+            }
+        }
+        
+        return height
     }
     
     /// 【递归】二叉树的高度
