@@ -20,6 +20,21 @@ class BinarySearchTree<T: Comparable> {
         return root
     }
     
+    /// 二叉树的高度
+    func height() -> Int {
+        let height = height(node: root)
+        return height
+    }
+    
+    private func height(node: Node<T>?) -> Int {
+        if node == nil {
+            return 0
+        }
+        let left = height(node: node?.left)
+        let right = height(node: node?.left)
+        return 1 + max(left, right)
+    }
+    
     func left(_ node: Any?) -> Any? {
         guard let node = node as? Node<T> else { return nil }
         return node.left
@@ -73,7 +88,7 @@ class BinarySearchTree<T: Comparable> {
             } else if cmp < 0 {
                 node = node!.left
             } else {
-                return
+                node?.element = element
             }
         }
 
