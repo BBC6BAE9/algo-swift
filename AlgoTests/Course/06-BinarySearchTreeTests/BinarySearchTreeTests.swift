@@ -20,13 +20,40 @@ struct BinarySearchTreeTests {
         assert(ret == want)
     }
 
+    @Test func testPreorderTraversal() async throws {
+        let data:[Int] = [7, 4, 9, 2, 5, 8, 11, 3, 12, 1]
+        let bst = BinarySearchTree<Int>()
+        for item in data {
+            bst.add(element: item)
+        }
+        bst.preorderTraversal()
+    }
+    
+    @Test func testInorderTraversal() async throws {
+        let data:[Int] = [7, 4, 2, 1, 3, 5, 9, 8, 11, 10, 12]
+        let bst = BinarySearchTree<Int>()
+        for item in data {
+            bst.add(element: item)
+        }
+        bst.inorderTraversal()
+    }
+    
+    @Test func testPostorderTraversal() async throws {
+        let data:[Int] = [7, 4, 2, 1, 3, 5, 9, 8, 11, 10, 12]
+        let bst = BinarySearchTree<Int>()
+        for item in data {
+            bst.add(element: item)
+        }
+        bst.postorderTraversal()
+    }
+    
     @Test func testHeight() async throws {
         let data:[Int] = [7, 4, 2, 1, 3, 5, 9, 8, 11, 10, 12]
         let bst = BinarySearchTree<Int>()
         for item in data {
             bst.add(element: item)
         }
-        let ret = bst.height()
+        let ret = bst.height2()
         let want = 4
         assert(ret == want)
     }

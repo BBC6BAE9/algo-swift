@@ -13,15 +13,66 @@ class BinarySearchTree<T: Comparable> {
     private var size: Int = 0
     
     var root: Node<T>?
-    
-    // MARK: - BinaryTreeInfo Protocol
-    
+        
     func getRoot() -> Any? {
         return root
     }
     
-    /// 二叉树的高度
+    /// 前序遍历【递归】
+    /// 根结点、前序遍历左子树、前序遍历右子树
+    func preorderTraversal() {
+        preorderTraversal(node: root)
+    }
+    
+    private func preorderTraversal(node: Node<T>?) {
+        guard let node = node else {
+            return
+        }
+        print(node.element)
+        preorderTraversal(node: node.left)
+        preorderTraversal(node: node.right)
+    }
+    
+    /// 中序遍历
+    /// 中序遍历左子树、根结点、中序遍历右子树
+    func inorderTraversal() {
+        inorderTraversal(node: root)
+    }
+    
+    private func inorderTraversal(node: Node<T>?) {
+        guard let node = node else {
+            return
+        }
+        inorderTraversal(node: node.left)
+        print(node.element)
+        inorderTraversal(node: node.right)
+    }
+        
+    /// 中序遍历
+    /// 中序遍历左子树、中序遍历右子树、根结点
+    func postorderTraversal() {
+        postorderTraversal(node: root)
+    }
+    
+    private func postorderTraversal(node: Node<T>?) {
+        guard let node = node else {
+            return
+        }
+        postorderTraversal(node: node.left)        
+        postorderTraversal(node: node.right)
+        print(node.element)
+    }
+    
+    // TODO: 【迭代】二叉树的高度
     func height() -> Int {
+        guard let root = root else {
+            return 0
+        }
+        return 0
+    }
+    
+    /// 【递归】二叉树的高度
+    func height2() -> Int {
         let height = height(node: root)
         return height
     }
