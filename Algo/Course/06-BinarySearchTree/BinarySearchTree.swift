@@ -133,21 +133,6 @@ class BinarySearchTree<T: Comparable> {
         return 1 + max(left, right)
     }
     
-    func left(_ node: Any?) -> Any? {
-        guard let node = node as? Node<T> else { return nil }
-        return node.left
-    }
-    
-    func right(_ node: Any?) -> Any? {
-        guard let node = node as? Node<T> else { return nil }
-        return node.right
-    }
-    
-    func string(_ node: Any?) -> String {
-        guard let node = node as? Node<T> else { return "" }
-        return "\(node.element)"
-    }
-    
     // MARK: - Tree Operations
     
     func getSize() -> Int {
@@ -234,5 +219,56 @@ class BinarySearchTree<T: Comparable> {
             self.element = element
             self.parent = parent
         }
+        
+        /// 是否是叶子节点
+        func isLeaf() -> Bool {
+            return left == nil && right == nil
+        }
+        
+        /// 是否有两个子节点
+        func hasTwoChildren() -> Bool {
+            return left != nil && right != nil
+        }
+        
+    }
+}
+
+extension BinarySearchTree {
+    /// 判断是否是 完全二叉树
+    /// 定义：叶子结点只能出现在最下层和次下层，且最下层的叶子结点集中在树的左部
+    func isComplete() -> Bool {
+        
+        // 空树认为不是完全二叉树
+        guard let root = root else {
+            return false
+        }
+        
+        // 非空树
+        let queue = Queue<Node<T>>()
+        queue.enQueue(element: root)
+        
+        var needLeaf = false
+        
+        while !queue.isEmpty() {
+            let node = queue.deQueue()!
+            
+            if needLeaf && !node.isLeaf() {
+                return false
+            }
+            
+            if let leftNode = node.left {
+                queue.enQueue(element: leftNode)
+            } else if node.right != nil {
+                return false
+            }
+            
+            if let rightNode = node.right {
+                queue.enQueue(element: rightNode)
+            } else {
+                needLeaf = true
+            }
+        }
+        
+        return true
     }
 }

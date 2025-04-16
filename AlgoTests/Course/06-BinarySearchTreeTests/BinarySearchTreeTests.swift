@@ -78,4 +78,25 @@ struct BinarySearchTreeTests {
         assert(ret == want)
     }
 
+    @Test func testIsCompleteWithTrue() async throws {
+        let data:[Int] = [7, 4, 9, 2, 5]
+        let bst = BinarySearchTree<Int>()
+        for item in data {
+            bst.add(element: item)
+        }
+        let ret = bst.isComplete()
+        let want = true
+        assert(ret == want)
+    }
+    
+    @Test func testIsCompleteWithFalse() async throws {
+        let data:[Int] = [7, 4, 9, 2, 1]
+        let bst = BinarySearchTree<Int>()
+        for item in data {
+            bst.add(element: item)
+        }
+        let ret = bst.isComplete()
+        let want = false
+        assert(ret == want)
+    }
 }
