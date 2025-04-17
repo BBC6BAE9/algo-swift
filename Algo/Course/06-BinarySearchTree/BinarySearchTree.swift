@@ -5,6 +5,7 @@
 //  Created by hong on 4/16/25.
 //
 
+// 相关练习：Solution226 翻转二叉树
 import Foundation
 
 /// 二叉搜索树
@@ -81,7 +82,7 @@ class BinarySearchTree<T: Comparable> {
             
             if let rightNode = node.right {
                 queue.enQueue(element: rightNode)
-            }
+            } 
         }
     }
 
