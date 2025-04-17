@@ -21,7 +21,7 @@ public class TreeNode {
 }
 
 class Solution226 {
-    func invertTree(_ root: TreeNode?) -> TreeNode? {
+    func invertTree1(_ root: TreeNode?) -> TreeNode? {
         guard let root = root else {
             return nil
         }
@@ -30,9 +30,42 @@ class Solution226 {
         root.left = root.right
         root.right = tmpNode
         
-        _ = invertTree(root.left)
-        _ = invertTree(root.right)
+        _ = invertTree1(root.left)
+        _ = invertTree1(root.right)
         
+        return root
+    }
+    
+    func invertTree2(_ root: TreeNode?) -> TreeNode? {
+        guard let root = root else {
+            return nil
+        }
+
+        _ = invertTree2(root.left)
+        _ = invertTree2(root.right)
+
+        let tmpNode = root.left
+        root.left = root.right
+        root.right = tmpNode
+        
+        return root
+    }
+    
+    func invertTree3(_ root: TreeNode?) -> TreeNode? {
+        guard let root = root else {
+            return nil
+        }
+
+        _ = invertTree2(root.left)
+        
+        let tmpNode = root.left
+        root.left = root.right
+        root.right = tmpNode
+        
+        // 关键改动 <-
+        _ = invertTree2(root.left)
+
+     
         return root
     }
 }
