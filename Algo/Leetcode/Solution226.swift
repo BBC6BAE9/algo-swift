@@ -23,7 +23,7 @@ public class TreeNode {
 class Solution226 {
     func invertTree(_ root: TreeNode?) -> TreeNode? {
         guard let root = root else {
-            return root
+            return nil
         }
         
         let tmpNode = root.left
@@ -31,7 +31,8 @@ class Solution226 {
         root.right = tmpNode
         
         _ = invertTree(root.left)
-        _ = invertTree(root.left)
+        _ = invertTree(root.right)
+        
         return root
     }
 }

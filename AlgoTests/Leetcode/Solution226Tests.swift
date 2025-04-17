@@ -10,18 +10,25 @@ import Testing
 struct Solution226Tests {
     
     @Test func testInvertTree() async throws {
-        let rootNode = TreeNode(1)
+        // [4,2,7,1,3,6,9]
+
+        let rootNode = TreeNode(4)
         rootNode.left = TreeNode(2)
-        rootNode.right = TreeNode(3)
+        rootNode.right = TreeNode(7)
+        rootNode.left?.left = TreeNode(1)
+        rootNode.left?.right = TreeNode(3)
+        rootNode.right?.left = TreeNode(6)
+        rootNode.right?.right = TreeNode(9)
+        
         let invertTreeNode = Solution226().invertTree(rootNode)
         
-        let leftRet = invertTreeNode?.left?.val
-        let leftWant = 3
+        let ret1 = invertTreeNode?.left?.left?.val
+        let want1 = 9
         
-        let rightRet = invertTreeNode?.right?.val
-        let rightWant = 2
+        let ret2 = invertTreeNode?.right?.right?.val
+        let want2 = 1
         
-        assert(leftRet == leftWant)
-        assert(rightRet == rightWant)
+        assert(ret1 == want1)
+        assert(ret2 == want2)
     }
 }
