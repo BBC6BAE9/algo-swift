@@ -7,6 +7,7 @@
 
 import Foundation
 
+// TODO: 参考下面的OC代码写一个打印二叉树的功能 https://github.com/CoderMJLee/BinaryTrees/blob/master/BinaryTreePrinterOC/BinaryTreePrinterOC/MJBinaryTrees/MJBinaryTrees.m
 /// 二叉搜索树
 class BinarySearchTree<T: Comparable> {
     
@@ -272,3 +273,57 @@ extension BinarySearchTree {
         return true
     }
 }
+
+// 前驱节点（predecessor）中序遍历时的前一个节点
+
+extension BinarySearchTree {
+
+    // 获取一个节点的前驱节点
+    private func predecessor(node: Node<T>?) -> Node<T>? {
+        var node = node
+        if node == nil {
+            return nil
+        }
+        
+        // 前驱节点在左子树中（left.right.right.right...）
+        if let leftNode = node?.left {
+            var p: Node<T>? = leftNode
+            while (p?.right != nil){
+                p = p?.right
+            }
+            return p
+        }
+        
+        // 从父节点、祖父节点中寻找前驱节点
+        while(node?.parent != nil && node == node?.parent?.left){
+            node = node?.parent
+        }
+         
+        return node?.parent
+    }
+    
+    // 获取一个节点的后继节点
+    private func successor(node: Node<T>?) -> Node<T>? {
+        var node = node
+        if node == nil {
+            return nil
+        }
+        
+        // 前驱节点在左子树中（right.left.left.left...）
+        if let leftNode = node?.right {
+            var p: Node<T>? = leftNode
+            while (p?.right != nil){
+                p = p?.left
+            }
+            return p
+        }
+        
+        // 从父节点、祖父节点中寻找前驱节点
+        while(node?.parent != nil && node == node?.parent?.right){
+            node = node?.parent
+        }
+         
+        return node?.parent
+    }
+}
+
