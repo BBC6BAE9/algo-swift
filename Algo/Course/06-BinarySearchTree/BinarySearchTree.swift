@@ -5,6 +5,7 @@
 //  Created by hong on 4/16/25.
 //
 
+// 相关练习：Solution226 翻转二叉树
 import Foundation
 
 // TODO: 参考下面的OC代码写一个打印二叉树的功能 https://github.com/CoderMJLee/BinaryTrees/blob/master/BinaryTreePrinterOC/BinaryTreePrinterOC/MJBinaryTrees/MJBinaryTrees.m
@@ -82,7 +83,7 @@ class BinarySearchTree<T: Comparable> {
             
             if let rightNode = node.right {
                 queue.enQueue(element: rightNode)
-            }
+            } 
         }
     }
 
