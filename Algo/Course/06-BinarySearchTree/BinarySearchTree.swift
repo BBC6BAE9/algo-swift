@@ -15,7 +15,7 @@ class BinarySearchTree<T: Comparable> {
     private var size: Int = 0
     
     var root: Node<T>?
-        
+    
     func getRoot() -> Any? {
         return root
     }
@@ -49,7 +49,7 @@ class BinarySearchTree<T: Comparable> {
         print(node.element)
         inorderTraversal(node: node.right)
     }
-        
+    
     /// 中序遍历
     /// 中序遍历左子树、中序遍历右子树、根结点
     func postorderTraversal() {
@@ -83,16 +83,16 @@ class BinarySearchTree<T: Comparable> {
             
             if let rightNode = node.right {
                 queue.enQueue(element: rightNode)
-            } 
+            }
         }
     }
-
+    
     // 【迭代】二叉树的高度
     func height() -> Int {
         guard let root = root else {
             return 0
         }
-         
+        
         var height = 0
         
         var levelSize = 1
@@ -176,7 +176,7 @@ class BinarySearchTree<T: Comparable> {
                 node?.element = element
             }
         }
-
+        
         let newNode: Node<T> = Node(element: element, parent: parentNode)
         if cmp > 0 {
             parentNode.right = newNode
@@ -187,12 +187,68 @@ class BinarySearchTree<T: Comparable> {
         size += 1
     }
     
-    func remove(element: T) {
-        
+    public func remove(element: T) {
+        remove(node: node(element: element))
     }
     
-    func contains(element: T) -> Bool {
+    private func removeElement(element: T) {
+        remove(node: node(element: element))
+    }
+    
+    private func contains(element: T) -> Bool {
         return false
+    }
+    
+    private func remove(node: Node<T>?) {
+        var node = node
+        if node == nil { return }
+        
+        size -= 1
+        
+        // 1、删除叶子节点：直接删除
+        // 2、删除度为1的节点：用子节点替代原节点的位置即可
+        // 3、删除度为2的节点：找到前驱节点或者后继节点来替代原节点的位置，以维持搜索二叉树的性质
+        
+        if node!.hasTwoChildren() {
+            let s = successor(node: node)!
+            node!.element = s.element
+            node = s
+        }
+        
+        // 删除node节点（node的度必然是1或者0）
+        let replacementNode = node?.left != nil ? node?.left : node?.right
+        if replacementNode != nil { // node是度为1的节点
+            replacementNode?.parent = node?.parent
+            if node?.parent == nil {
+                root = replacementNode
+            }else if node == node?.parent?.left {
+                node?.parent?.left = replacementNode
+            }else {
+                node?.parent?.right = replacementNode
+            }
+        } else if(node?.parent == nil){ // node是叶子节点且是根节点
+            root = nil
+        }else{ // node是叶子节点，但不是根节点
+            if(node == node?.parent?.left) {
+                node?.parent?.left = nil
+            } else {
+                node?.parent?.right = nil
+            }
+        }
+    }
+    
+    private func node(element: T) -> Node<T>? {
+        var node = root
+        while node != nil {
+            let cmp = compare(e1: element, e2: node!.element)
+            if cmp == 0 {return node}
+            if cmp > 0 {
+                node = node?.right
+            }else{
+                node = node?.left
+            }
+        }
+        return nil
     }
     
     /// 比较两个元素的大小
@@ -278,7 +334,7 @@ extension BinarySearchTree {
 // 前驱节点（predecessor）中序遍历时的前一个节点
 
 extension BinarySearchTree {
-
+    
     // 获取一个节点的前驱节点
     private func predecessor(node: Node<T>?) -> Node<T>? {
         var node = node
@@ -299,7 +355,7 @@ extension BinarySearchTree {
         while(node?.parent != nil && node == node?.parent?.left){
             node = node?.parent
         }
-         
+        
         return node?.parent
     }
     
@@ -323,7 +379,7 @@ extension BinarySearchTree {
         while(node?.parent != nil && node == node?.parent?.right){
             node = node?.parent
         }
-         
+        
         return node?.parent
     }
 }
