@@ -67,7 +67,7 @@ class BST<T: Comparable>: BianryTree<T> {
         if node == nil { return }
         
         size -= 1
-         
+        
         // 1、删除叶子节点：直接删除
         // 2、删除度为1的节点：用子节点替代原节点的位置即可
         // 3、删除度为2的节点：找到前驱节点或者后继节点来替代原节点的位置，以维持搜索二叉树的性质
@@ -126,5 +126,95 @@ class BST<T: Comparable>: BianryTree<T> {
             return -1
         }
     }
-
+    
+    /// 判断是否是 完全二叉树
+    /// 定义：叶子结点只能出现在最下层和次下层，且最下层的叶子结点集中在树的左部
+    func isComplete() -> Bool {
+        
+        // 空树认为不是完全二叉树
+        guard let root = root else {
+            return false
+        }
+        
+        // 非空树
+        let queue = Queue<Node<T>>()
+        queue.enQueue(element: root)
+        
+        var needLeaf = false
+        
+        while !queue.isEmpty() {
+            let node = queue.deQueue()!
+            
+            if needLeaf && !node.isLeaf() {
+                return false
+            }
+            
+            if let leftNode = node.left {
+                queue.enQueue(element: leftNode)
+            } else if node.right != nil {
+                return false
+            }
+            
+            if let rightNode = node.right {
+                queue.enQueue(element: rightNode)
+            } else {
+                needLeaf = true
+            }
+        }
+        
+        return true
+    }
+    
+    
+    
+    // 获取一个节点的前驱节点
+    // 前驱节点（predecessor）中序遍历时的前一个节点
+    
+    public func predecessor(node: Node<T>?) -> Node<T>? {
+        var node = node
+        if node == nil {
+            return nil
+        }
+        
+        // 前驱节点在左子树中（left.right.right.right...）
+        if let leftNode = node?.left {
+            var p: Node<T>? = leftNode
+            while (p?.right != nil){
+                p = p?.right
+            }
+            return p
+        }
+        
+        // 从父节点、祖父节点中寻找前驱节点
+        while(node?.parent != nil && node == node?.parent?.left){
+            node = node?.parent
+        }
+        
+        return node?.parent
+    }
+    
+    // 获取一个节点的后继节点
+    public func successor(node: Node<T>?) -> Node<T>? {
+        var node = node
+        if node == nil {
+            return nil
+        }
+        
+        // 前驱节点在左子树中（right.left.left.left...）
+        if let leftNode = node?.right {
+            var p: Node<T>? = leftNode
+            while (p?.right != nil){
+                p = p?.left
+            }
+            return p
+        }
+        
+        // 从父节点、祖父节点中寻找前驱节点
+        while(node?.parent != nil && node == node?.parent?.right){
+            node = node?.parent
+        }
+        
+        return node?.parent
+    }
+    
 }
