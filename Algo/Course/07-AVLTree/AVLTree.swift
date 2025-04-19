@@ -25,7 +25,7 @@ class AVLTree<T: Comparable>: BST<T> {
             } else {
                 // 恢复平衡
                 rebalance(grand: node!)
-//                rebalance2(grand: node!)
+                // rebalance2(grand: node!)
                 break
             }
             node = node?.parent
