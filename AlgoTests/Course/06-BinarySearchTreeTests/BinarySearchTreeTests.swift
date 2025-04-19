@@ -11,7 +11,7 @@ struct BinarySearchTreeTests {
 
     @Test func test() async throws {
         let data:[Int] = [7, 4, 9, 2, 5, 8, 11, 3]
-        let bst = BinarySearchTree<Int>()
+        let bst = BST<Int>()
         for item in data {
             bst.add(element: item)
         }
@@ -22,7 +22,7 @@ struct BinarySearchTreeTests {
 
     @Test func testPreorderTraversal() async throws {
         let data:[Int] = [7, 4, 9, 2, 5, 8, 11, 3, 12, 1]
-        let bst = BinarySearchTree<Int>()
+        let bst = BST<Int>()
         for item in data {
             bst.add(element: item)
         }
@@ -31,7 +31,7 @@ struct BinarySearchTreeTests {
     
     @Test func testInorderTraversal() async throws {
         let data:[Int] = [7, 4, 2, 1, 3, 5, 9, 8, 11, 10, 12]
-        let bst = BinarySearchTree<Int>()
+        let bst = BST<Int>()
         for item in data {
             bst.add(element: item)
         }
@@ -40,7 +40,7 @@ struct BinarySearchTreeTests {
     
     @Test func testPostorderTraversal() async throws {
         let data:[Int] = [7, 4, 2, 1, 3, 5, 9, 8, 11, 10, 12]
-        let bst = BinarySearchTree<Int>()
+        let bst = BST<Int>()
         for item in data {
             bst.add(element: item)
         }
@@ -49,7 +49,7 @@ struct BinarySearchTreeTests {
     
     @Test func testLevelOrderTraversal() async throws {
         let data:[Int] = [7, 4, 2, 1, 3, 5, 9, 8, 11, 10, 12]
-        let bst = BinarySearchTree<Int>()
+        let bst = BST<Int>()
         for item in data {
             bst.add(element: item)
         }
@@ -58,7 +58,7 @@ struct BinarySearchTreeTests {
     
     @Test func testHeight() async throws {
         let data:[Int] = [7, 4, 2, 1, 3, 5, 9, 8, 11, 10, 12]
-        let bst = BinarySearchTree<Int>()
+        let bst = BST<Int>()
         for item in data {
             bst.add(element: item)
         }
@@ -69,7 +69,7 @@ struct BinarySearchTreeTests {
     
     @Test func testHeight2() async throws {
         let data:[Int] = [7, 4, 2, 1, 3, 5, 9, 8, 11, 10, 12]
-        let bst = BinarySearchTree<Int>()
+        let bst = BST<Int>()
         for item in data {
             bst.add(element: item)
         }
@@ -80,7 +80,7 @@ struct BinarySearchTreeTests {
 
     @Test func testIsCompleteWithTrue() async throws {
         let data:[Int] = [7, 4, 9, 2, 5]
-        let bst = BinarySearchTree<Int>()
+        let bst = BST<Int>()
         for item in data {
             bst.add(element: item)
         }
@@ -91,7 +91,7 @@ struct BinarySearchTreeTests {
     
     @Test func testIsCompleteWithFalse() async throws {
         let data:[Int] = [7, 4, 9, 2, 1]
-        let bst = BinarySearchTree<Int>()
+        let bst = BST<Int>()
         for item in data {
             bst.add(element: item)
         }
@@ -102,7 +102,7 @@ struct BinarySearchTreeTests {
     
     @Test func testRemove() async throws {
         let data:[Int] = [7, 4, 9, 2, 5, 8, 11, 3, 12, 1]
-        let bst = BinarySearchTree<Int>()
+        let bst = BST<Int>()
         for item in data {
             bst.add(element: item)
         }
