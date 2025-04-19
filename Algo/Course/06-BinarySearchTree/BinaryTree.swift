@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BianryTree<T: Comparable>  {
+class BinaryTree<T: Comparable>  {
     
     public var size: Int = 0
     

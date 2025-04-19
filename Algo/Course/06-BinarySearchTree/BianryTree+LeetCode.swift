@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension BianryTree {
+extension BinaryTree {
     // 226.翻转二叉树：https://leetcode.cn/problems/invert-binary-tree/description/
     // 450.删除二叉搜索树中的节点：https://leetcode.cn/problems/delete-node-in-a-bst/description/
     // 701.二叉搜索树中的插入操作：https://leetcode.cn/problems/insert-into-a-binary-search-tree/description/
