@@ -146,7 +146,8 @@ class BinarySearchTree<T: Comparable> {
     }
     
     func clear(){
-        
+        root = nil
+        size = 0
     }
     
     func add(element: T) {
@@ -196,7 +197,7 @@ class BinarySearchTree<T: Comparable> {
     }
     
     private func contains(element: T) -> Bool {
-        return false
+        node(element: element) != nil
     }
     
     private func remove(node: Node<T>?) {
