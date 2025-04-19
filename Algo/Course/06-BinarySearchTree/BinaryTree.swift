@@ -97,6 +97,11 @@ class BinaryTree<T: Comparable>  {
         }
     }
     
+    /// 创建一个新节点
+    public func createNode(element: T, parent: Node<T>?) -> Node<T> {
+        return Node(element: element, parent: parent)
+    }
+    
     // 【迭代】二叉树的高度
     func height() -> Int {
         guard let root = root else {
@@ -170,5 +175,14 @@ class BinaryTree<T: Comparable>  {
             return left != nil && right != nil
         }
         
+        /// 当前节点是否是父节点的左子节点
+        func isLeftChild() -> Bool {
+            return parent != nil && self == parent?.left
+        }
+        
+        /// 当前节点是否是父节点的右子节点
+        func isRightChild() -> Bool {
+            return parent != nil && self == parent?.right
+        }
     }
 }

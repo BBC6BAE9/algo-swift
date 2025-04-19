@@ -15,8 +15,9 @@ class BST<T: Comparable>: BinaryTree<T> {
     func add(element: T) {
         
         guard let root = root else { // 添加第一个节点
-            root = Node(element: element, parent: nil)
+            root = createNode(element: element, parent: nil)
             size += 1;
+            afterAdd(node: root!)
             return
         }
         
@@ -40,7 +41,8 @@ class BST<T: Comparable>: BinaryTree<T> {
             }
         }
         
-        let newNode: Node<T> = Node(element: element, parent: parentNode)
+        let newNode: Node<T> = createNode(element: element, parent: parentNode)
+        
         if cmp > 0 {
             parentNode.right = newNode
         }else{
@@ -48,11 +50,18 @@ class BST<T: Comparable>: BinaryTree<T> {
         }
         
         size += 1
+        afterAdd(node: newNode)
     }
     
     public func remove(element: T) {
         remove(node: node(element: element))
     }
+    
+    // 添加Node之后的调整
+    public func afterAdd(node: Node<T>) {
+            
+    }
+    
     
     private func removeElement(element: T) {
         remove(node: node(element: element))
