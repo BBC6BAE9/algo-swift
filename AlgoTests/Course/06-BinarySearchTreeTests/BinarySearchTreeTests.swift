@@ -99,4 +99,20 @@ struct BinarySearchTreeTests {
         let want = false
         assert(ret == want)
     }
+    
+    @Test func testRemove() async throws {
+        let data:[Int] = [7, 4, 9, 2, 5, 8, 11, 3, 12, 1]
+        let bst = BinarySearchTree<Int>()
+        for item in data {
+            bst.add(element: item)
+        }
+        
+        let ret1 = bst.root?.left?.left?.left?.element
+        assert(ret1 == 1)
+        
+        bst.remove(element: 1)
+        
+        let ret2 = bst.root?.left?.left?.left?.element
+        assert(ret2 == nil)
+    }
 }
