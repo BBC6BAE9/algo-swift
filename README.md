@@ -6,19 +6,19 @@
 
 
 
-### 静态数组（Array）
+### (1) 静态数组（Array）
 
 初始化之前需要手动开辟内存，容量是固定的
 
 
 
-### 动态数组（Dynamic Array）
+### (2) 动态数组（Dynamic Array）
 
 很多语言的数组是固定容量的，我们需要有一个能够动态扩容的数据结构，这个数据结构就是动态数组。使用的内存是连续的
 
 
 
-###  链表（Linked List）
+###  (3) 链表（Linked List）
 
 动态数组有一个明显的缺点，就是可能会造成内存空间的大量浪费，能否用到多少内存就使用多少内存？
 
@@ -30,27 +30,24 @@
 
 
 
-### 双向链表（Double Linked List）
+### (4) 双向链表（Double Linked List）
 
 使用双向链表可以提升链表的综合性能
 
 
 
-### 单向循环链表（Circle Linked List）
+### (5) 单向循环链表（Circle Linked List）
 
 
 
-### 双向循环链表（Circle Double Linked List）
+### (6) 双向循环链表（Circle Double Linked List）
 
 
-
-### 栈（Stack）
+### (7) 栈（Stack）
 
 栈是一种特殊的线性表，只能在一端进行操作，它的特点是`FILO`
 
-
-
-### 队列（Queue）
+### (8) 队列（Queue）
 
  队列是一种特殊的线性表，只能在头尾两端进行操作
 
@@ -58,27 +55,20 @@
 
  front（队头）：只能从队头移除元素，一般叫做deQueue，出队
 
-
-
-### 双端队列（ Double Ended Queue）
+### (9) 双端队列（ Double Ended Queue）
 
 双端队列是能在头尾两端添加、删除的队列
 
 可以使用动态数组和链表来进行实现，因为队列主要是往头尾操作元素，我们选择双向链表
 
+### (10) 环形队列（Circular Queue）
 
-
-### 环形队列（Circular Queue）
-
-
-
-### 环形双端队列（Circular Double Ended Queue）
-
+### (11) 环形双端队列（Circular Double Ended Queue）
 
 
 ## 2、树（Tree）
 
-### 二叉搜索树（Binary Search Tree）
+### (1) 二叉搜索树（Binary Search Tree）
 
 简称BST，二叉搜索树对比之前的链表来说，搜索、删除、插入的效率大大提高。如果是一颗满二叉树，时间复杂度为 O(h) = O(logn)
 
@@ -124,15 +114,11 @@ graph TD
 
 
 
-### 平衡二叉搜索树（Balanced Binary Search Tree）
+### (2) 平衡二叉搜索树（Balanced Binary Search Tree）
 
 AVL树是二叉搜索树的一种改进方案，避免了上述极端情况的产生，改进的方案是：在添加和删除之前，想办法让二叉树恢复平衡（减少树的高度）
 
-
-
 > 平衡（balancing）：左右子树的高度约接近，就越平衡，相应的在搜索、删除、插入的操作中时间复杂度会减少。
-
-
 
 如果继续调整节点的位置，完全可以达到理想的平衡，但是付出的代价可能会比较大。调整的次数比较多的时候，反而增加了时间复杂度。总的来说，比较合理
 
@@ -140,9 +126,7 @@ AVL树是二叉搜索树的一种改进方案，避免了上述极端情况的�
 
 一般也称他们为：自平衡的二叉搜索树（Self-Balancing Binary Search Tree）
 
-
-
-### AVL树（AVL Tree）
+### (3) AVL树（AVL Tree）
 
 AVL树是最早发明的自平衡二叉搜索树之一，名字取自两个发明者的名字G.M.Adelson-Velsky 和 E.M.Landis （苏联）
 
@@ -154,10 +138,6 @@ AVL树的特点
 
 - 搜索、添加、删除的时间复杂度是O(logn)
 
-
-
 > 平衡因子（Balance Factor）：某个节点左右子树的高度差
-
-
 
 AVL树是一种特殊的二叉搜索树，它在二叉搜索 `树添加` 或 `删除` 节点的时候对二叉树进行了再平衡（rebalance）操作
