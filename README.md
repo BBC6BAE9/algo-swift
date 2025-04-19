@@ -5,20 +5,19 @@
 ## 1、线性表（List）
 
 
+### 1.1 数组
 
-### (1) 静态数组（Array）
+#### 1.1.1 静态数组（Array）
 
 初始化之前需要手动开辟内存，容量是固定的
 
-
-
-### (2) 动态数组（Dynamic Array）
+#### 1.1.2 动态数组（Dynamic Array）
 
 很多语言的数组是固定容量的，我们需要有一个能够动态扩容的数据结构，这个数据结构就是动态数组。使用的内存是连续的
 
+### 1.2 链表（Linked List）
 
-
-###  (3) 链表（Linked List）
+#### 1.2.1 链表（Linked List）
 
 动态数组有一个明显的缺点，就是可能会造成内存空间的大量浪费，能否用到多少内存就使用多少内存？
 
@@ -28,26 +27,25 @@
 
 为了让代码更加精简，统一所有节点的处理逻辑，后来又出现了 `虚拟头节点链表`
 
-
-
-### (4) 双向链表（Double Linked List）
+#### 1.2.2 双向链表（Double Linked List）
 
 使用双向链表可以提升链表的综合性能
 
 
-
-### (5) 单向循环链表（Circle Linked List）
-
+#### 1.2.3 单向循环链表（Circle Linked List）
 
 
-### (6) 双向循环链表（Circle Double Linked List）
+
+#### 1.2.4 双向循环链表（Circle Double Linked List）
 
 
-### (7) 栈（Stack）
+### 1.3 栈（Stack）
 
 栈是一种特殊的线性表，只能在一端进行操作，它的特点是`FILO`
 
-### (8) 队列（Queue）
+### 1.4 队列（Queue）
+
+#### 1.4.1 队列（Queue）
 
  队列是一种特殊的线性表，只能在头尾两端进行操作
 
@@ -55,20 +53,20 @@
 
  front（队头）：只能从队头移除元素，一般叫做deQueue，出队
 
-### (9) 双端队列（ Double Ended Queue）
+#### 1.4.2 双端队列（ Double Ended Queue）
 
 双端队列是能在头尾两端添加、删除的队列
 
 可以使用动态数组和链表来进行实现，因为队列主要是往头尾操作元素，我们选择双向链表
 
-### (10) 环形队列（Circular Queue）
+#### 1.4.3 环形队列（Circular Queue）
 
-### (11) 环形双端队列（Circular Double Ended Queue）
+#### 1.4.4 环形双端队列（Circular Double Ended Queue）
 
 
 ## 2、树（Tree）
 
-### (1) 二叉搜索树（Binary Search Tree）
+#### 2.1 二叉搜索树（Binary Search Tree）
 
 简称BST，二叉搜索树对比之前的链表来说，搜索、删除、插入的效率大大提高。如果是一颗满二叉树，时间复杂度为 O(h) = O(logn)
 
@@ -114,7 +112,7 @@ graph TD
 
 
 
-### (2) 平衡二叉搜索树（Balanced Binary Search Tree）
+### 2.2 平衡二叉搜索树（Balanced Binary Search Tree）
 
 AVL树是二叉搜索树的一种改进方案，避免了上述极端情况的产生，改进的方案是：在添加和删除之前，想办法让二叉树恢复平衡（减少树的高度）
 
@@ -126,7 +124,7 @@ AVL树是二叉搜索树的一种改进方案，避免了上述极端情况的�
 
 一般也称他们为：自平衡的二叉搜索树（Self-Balancing Binary Search Tree）
 
-### (3) AVL树（AVL Tree）
+#### 2.2.1 AVL树（AVL Tree）
 
 AVL树是最早发明的自平衡二叉搜索树之一，名字取自两个发明者的名字G.M.Adelson-Velsky 和 E.M.Landis （苏联）
 
