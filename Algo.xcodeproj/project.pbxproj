@@ -43,6 +43,7 @@
 				"Course/05-Queue/Deque.swift",
 				"Course/05-Queue/Queue.swift",
 				"Course/06-BinarySearchTree/BianryTree.swift",
+				"Course/06-BinarySearchTree/BianryTree+LeetCode.swift",
 				"Course/06-BinarySearchTree/BST.swift",
 				Leetcode/Solution1.swift,
 				Leetcode/Solution20.swift,
