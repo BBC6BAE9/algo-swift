@@ -61,7 +61,11 @@ class BST<T: Comparable>: BinaryTree<T> {
     public func afterAdd(node: Node<T>) {
             
     }
-    
+
+    // 删除Node之后的调整
+    public func afterRemove(node: Node<T>) {
+            
+    }
     
     private func removeElement(element: T) {
         remove(node: node(element: element))
