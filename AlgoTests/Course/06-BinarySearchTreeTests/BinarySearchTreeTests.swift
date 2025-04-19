@@ -17,6 +17,7 @@ struct BinarySearchTreeTests {
         }
         let ret = bst.root?.left?.left?.right?.element
         let want = 3
+        print(bst.asString)
         assert(ret == want)
     }
 

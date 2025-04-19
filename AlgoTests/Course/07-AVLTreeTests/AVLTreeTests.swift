@@ -17,6 +17,7 @@ struct AVLTreeTests {
         }
         let ret = avl.root
         let want = 19
+        print(avl.asString)
         assert(ret?.element == want)
     }
 
