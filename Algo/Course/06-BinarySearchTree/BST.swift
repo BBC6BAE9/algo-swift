@@ -102,14 +102,24 @@ class BST<T: Comparable>: BinaryTree<T> {
             }else {
                 node?.parent?.right = replacementNode
             }
+            
+            // 删除节点之后的处理
+            afterRemove(node: node!)
+            
         } else if(node?.parent == nil){ // node是叶子节点且是根节点
             root = nil
+            
+            // 删除节点之后的处理
+            afterRemove(node: node!)
         }else{ // node是叶子节点，但不是根节点
             if(node == node?.parent?.left) {
                 node?.parent?.left = nil
             } else {
                 node?.parent?.right = nil
             }
+            
+            // 删除节点之后的处理
+            afterRemove(node: node!)
         }
     }
     

@@ -14,7 +14,8 @@ class AVLTree<T: Comparable>: BST<T> {
     override func createNode(element: T, parent: BinaryTree<T>.Node<T>?) -> BinaryTree<T>.Node<T> {
         return AVLNode<T>(element: element, parent: parent)
     }
-    
+        
+    // MARK: Override
     // 实现恢复平衡的逻辑
     override func afterAdd(node: BinaryTree<T>.Node<T>) {
         var node: (BinaryTree<T>.Node<T>)? = node
@@ -27,6 +28,21 @@ class AVLTree<T: Comparable>: BST<T> {
                 rebalance(grand: node!)
                 // rebalance2(grand: node!)
                 break
+            }
+            node = node?.parent
+        }
+    }
+    
+    override func afterRemove(node: BinaryTree<T>.Node<T>) {
+        var node: (BinaryTree<T>.Node<T>)? = node
+        while (node != nil) {
+            if (isBlanced(node: node!)) {
+                // 发现是平衡的，顺便更新节点的高度
+                updateHeight(node: node!)
+            } else {
+                // 恢复平衡
+                rebalance(grand: node!)
+                // rebalance2(grand: node!)
             }
             node = node?.parent
         }
