@@ -27,8 +27,8 @@
 		F1F1111C2D76B31200527D54 /* Exceptions for "Algo" folder in "AlgoTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Base/FixedSizeArray.swift,
-				"Course/01-Complexity/Fibonacci.swift",
+				"Course/00-Complexity/Fibonacci.swift",
+				"Course/01-StaticArray/FixedSizeArray.swift",
 				"Course/02-DynamicArray/ArrayList.swift",
 				"Course/03-List/CircleDoubleLinkedList.swift",
 				"Course/03-List/CircleLinkedList.swift",

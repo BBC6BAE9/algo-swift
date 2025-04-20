@@ -63,54 +63,44 @@ class AVLTree<T: Comparable>: BST<T> {
         if parent.isLeftChild() {
             if node.isLeftChild() { // LL
                 rotate(r: grand,
-                       a: node.left,
                        b: node,
                        c: node.right,
                        d: parent,
                        e: parent.right,
-                       f: grand,
-                       g: grand.right)
+                       f: grand)
             }else{ // LR
                 rotate(r: grand,
-                       a: parent.left,
                        b: parent,
                        c: node.left,
                        d: node,
                        e: node.right,
-                       f: grand,
-                       g: grand.right)
+                       f: grand)
             }
         } else {
             if node.isLeftChild() { // RL
                 rotate(r: grand,
-                       a: grand.left,
                        b: grand,
                        c: node.left,
                        d: node,
                        e: node.right,
-                       f: parent,
-                       g: parent.right)
+                       f: parent)
             }else{ // RR
                 rotate(r: grand,
-                       a: grand.left,
                        b: grand,
                        c: parent.left,
                        d: parent,
                        e: node.left,
-                       f: node,
-                       g: node.right)
+                       f: node)
             }
         }
     }
     
     private func rotate(r: Node<T>,  // 子树的根节点，一定有值
-                        a: Node<T>?,
                         b: Node<T>,  // 一定有值
                         c: Node<T>?,
                         d: Node<T>,  // 一定有值
                         e: Node<T>?,
                         f: Node<T>,  // 一定有值
-                        g: Node<T>?
     ) {
         // 1、让d称为这颗子树的根节点
         d.parent = r.parent
@@ -120,12 +110,6 @@ class AVLTree<T: Comparable>: BST<T> {
             r.parent?.right = d
         } else {
             root = d
-        }
-        
-        // 2、处理a-b-c
-        b.left = a
-        if let a = a {
-            a.parent = b
         }
         
         b.right = c
@@ -140,11 +124,6 @@ class AVLTree<T: Comparable>: BST<T> {
         f.left = e
         if let e = e {
             e.parent = f
-        }
-        
-        f.right = g
-        if let g = g {
-            g.parent = f
         }
         
         updateHeight(node: f)
