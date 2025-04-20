@@ -189,6 +189,19 @@ class BinaryTree<T: Comparable>  {
         func isRightChild() -> Bool {
             return parent != nil && self == parent?.right
         }
+        
+        /// 访问兄弟节点
+        func sibling() -> Node<E>? {
+            if isLeftChild() {
+                return parent?.right
+            }
+            
+            if isRightChild() {
+                return parent?.left
+            }
+            
+            return nil
+        }
     }
 }
 
