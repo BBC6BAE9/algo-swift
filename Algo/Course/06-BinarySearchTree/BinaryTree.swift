@@ -152,6 +152,56 @@ class BinaryTree<T: Comparable>  {
         return 1 + max(left, right)
     }
     
+    // 获取一个节点的前驱节点
+    // 前驱节点（predecessor）中序遍历时的前一个节点
+    
+    public func predecessor(node: Node<T>?) -> Node<T>? {
+        var node = node
+        if node == nil {
+            return nil
+        }
+        
+        // 前驱节点在左子树中（left.right.right.right...）
+        if let leftNode = node?.left {
+            var p: Node<T>? = leftNode
+            while (p?.right != nil){
+                p = p?.right
+            }
+            return p
+        }
+        
+        // 从父节点、祖父节点中寻找前驱节点
+        while(node?.parent != nil && node == node?.parent?.left){
+            node = node?.parent
+        }
+        
+        return node?.parent
+    }
+    
+    // 获取一个节点的后继节点
+    public func successor(node: Node<T>?) -> Node<T>? {
+        var node = node
+        if node == nil {
+            return nil
+        }
+        
+        // 前驱节点在左子树中（right.left.left.left...）
+        if let leftNode = node?.right {
+            var p: Node<T>? = leftNode
+            while (p?.right != nil){
+                p = p?.left
+            }
+            return p
+        }
+        
+        // 从父节点、祖父节点中寻找前驱节点
+        while(node?.parent != nil && node == node?.parent?.right){
+            node = node?.parent
+        }
+        
+        return node?.parent
+    }
+    
     class Node<E: Comparable>: Equatable {
     
         var asString:String { return treeString(self){("\($0.element)",$0.left,$0.right)}  }

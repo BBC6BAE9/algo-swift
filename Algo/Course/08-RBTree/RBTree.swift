@@ -7,8 +7,8 @@
 
 import Foundation
 
-fileprivate let RED = false
-fileprivate let BLACK = true
+let RED = false
+let BLACK = true
 
 class RBTree<T: Comparable>: BBST<T> {
     

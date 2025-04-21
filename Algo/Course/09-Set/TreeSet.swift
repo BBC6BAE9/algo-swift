@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// 红黑树实现的集合
+/// 限制：必须具备可比较性
 class TreeSet<T: Comparable>: SetProtocol {
     
     private var tree = RBTree<T>()
