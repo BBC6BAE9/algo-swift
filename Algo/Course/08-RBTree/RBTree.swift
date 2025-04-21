@@ -10,7 +10,7 @@ import Foundation
 fileprivate let RED = false
 fileprivate let BLACK = true
 
-class RBTree<T: Comparable>: BST<T> {
+class RBTree<T: Comparable>: BBST<T> {
     
     /// 染色
     private func color(node:Node<T>?,
@@ -48,7 +48,7 @@ class RBTree<T: Comparable>: BST<T> {
     
      /// 红黑树节点
     private class RBNode<E: Comparable>: BinaryTree<T>.Node<T> {
-        var color: Bool = BLACK
+        var color: Bool = RED
         override init(element: T, parent: BinaryTree<T>.Node<T>?) {
             super.init(element: element, parent: parent)
         }
@@ -56,7 +56,51 @@ class RBTree<T: Comparable>: BST<T> {
     
     // MARK: override
     override func afterAdd(node: BinaryTree<T>.Node<T>) {
+        let parent = node.parent
         
+        // 添加的是亘节点
+        guard let parent = parent else {
+            return
+        }
+        
+        // 如果父节点是黑色，直接返回
+        if isBlack(node: parent) { return }
+        
+        // 叔父节点
+        let uncle = parent.sibling()
+        
+        // 祖父节点
+        let grand = parent.parent
+        
+        if isRed(node: uncle) { // 叔父节点是红色
+            _ = black(node: parent)
+            _ = black(node: uncle)
+            
+            afterAdd(node: red(node: grand)!)
+            return
+        }
+        
+        // 叔父节点不是红色
+        if (parent.isLeftChild()) { // L
+            _ = red(node: grand)
+            
+            if node.isLeftChild() { // LL
+                _ = black(node: parent)
+            } else { // LR
+                _ = black(node: node)
+            }
+            
+            rotateRight(grand: grand!)
+        } else { // R
+            _ = red(node: grand)
+
+            if node.isLeftChild() { // RL
+                _ = black(node: node)
+            } else { // RR
+                _ = black(node: parent)
+            }
+            rotateLeft(grand: grand!)
+        }
     }
     
     override func afterRemove(node: BinaryTree<T>.Node<T>) {
