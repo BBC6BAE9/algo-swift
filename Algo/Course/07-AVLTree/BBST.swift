@@ -9,17 +9,6 @@ import Foundation
 
 class BBST<T: Comparable>: BST<T> {
     
-    
-    // 左旋转
-    func rotateLeft(grand: Node<T>) {
-        let parent = grand.right
-        let child = parent?.left
-        grand.right = child
-        parent?.left = grand
-        
-        afterRotate(grand: grand, parent: parent, child: child)
-    }
-    
     func afterRotate(grand: Node<T>, parent: Node<T>?, child: Node<T>?) {
         // 让parent称为子树的根节点
         parent?.parent = grand.parent
@@ -76,8 +65,24 @@ class BBST<T: Comparable>: BST<T> {
         
     }
     
+    // 左旋转
+    func rotateLeft(grand: Node<T>?) {
+        guard let grand = grand else {
+            return
+        }
+        let parent = grand.right
+        let child = parent?.left
+        grand.right = child
+        parent?.left = grand
+        
+        afterRotate(grand: grand, parent: parent, child: child)
+    }
+    
     // 右旋转
-    func rotateRight(grand: Node<T>) {
+    func rotateRight(grand: Node<T>?) {
+        guard let grand = grand else {
+            return
+        }
         let parent = grand.left
         let child = parent?.right
         grand.left = child

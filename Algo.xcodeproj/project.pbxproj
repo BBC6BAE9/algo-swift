@@ -47,6 +47,7 @@
 				"Course/06-BinarySearchTree/BST.swift",
 				"Course/07-AVLTree/AVLTree.swift",
 				"Course/07-AVLTree/BBST.swift",
+				"Course/08-RBTree/RBTree.swift",
 				Leetcode/Solution1.swift,
 				Leetcode/Solution20.swift,
 				Leetcode/Solution42.swift,
