@@ -66,7 +66,7 @@ class BBST<T: Comparable>: BST<T> {
     }
     
     // 左旋转
-    func rotateLeft(grand: Node<T>?) {
+    func rotateLeft(_ grand: Node<T>?) {
         guard let grand = grand else {
             return
         }
@@ -79,7 +79,7 @@ class BBST<T: Comparable>: BST<T> {
     }
     
     // 右旋转
-    func rotateRight(grand: Node<T>?) {
+    func rotateRight(_ grand: Node<T>?) {
         guard let grand = grand else {
             return
         }

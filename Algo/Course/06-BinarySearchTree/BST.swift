@@ -62,7 +62,7 @@ class BST<T: Comparable>: BinaryTree<T> {
     }
 
     // 删除Node之后的调整
-    public func afterRemove(node: Node<T>) {
+    public func afterRemove(node: Node<T>, replacementNode: Node<T>?) {
             
     }
     
@@ -75,8 +75,7 @@ class BST<T: Comparable>: BinaryTree<T> {
     }
     
     private func remove(node: Node<T>?) {
-        var node = node
-        if node == nil { return }
+        guard var node = node else { return }
         
         size -= 1
         
@@ -84,41 +83,42 @@ class BST<T: Comparable>: BinaryTree<T> {
         // 2、删除度为1的节点：用子节点替代原节点的位置即可
         // 3、删除度为2的节点：找到前驱节点或者后继节点来替代原节点的位置，以维持搜索二叉树的性质
         
-        if node!.hasTwoChildren() {
-            let s = successor(node: node)!
-            node!.element = s.element
-            node = s
+        if node.hasTwoChildren() {
+            if let s = successor(node: node) {
+                node.element = s.element
+                node = s
+            }
         }
         
         // 删除node节点（node的度必然是1或者0）
-        let replacementNode = node?.left != nil ? node?.left : node?.right
+        let replacementNode = node.left != nil ? node.left : node.right
         if replacementNode != nil { // node是度为1的节点
-            replacementNode?.parent = node?.parent
-            if node?.parent == nil {
+            replacementNode?.parent = node.parent
+            if node.parent == nil {
                 root = replacementNode
-            }else if node == node?.parent?.left {
-                node?.parent?.left = replacementNode
+            }else if node == node.parent?.left {
+                node.parent?.left = replacementNode
             }else {
-                node?.parent?.right = replacementNode
+                node.parent?.right = replacementNode
             }
             
             // 删除节点之后的处理
-            afterRemove(node: node!)
+            afterRemove(node: node, replacementNode: replacementNode)
             
-        } else if(node?.parent == nil){ // node是叶子节点且是根节点
+        } else if(node.parent == nil){ // node是叶子节点且是根节点
             root = nil
             
             // 删除节点之后的处理
-            afterRemove(node: node!)
+            afterRemove(node: node, replacementNode: nil)
         }else{ // node是叶子节点，但不是根节点
-            if(node == node?.parent?.left) {
-                node?.parent?.left = nil
+            if(node == node.parent?.left) {
+                node.parent?.left = nil
             } else {
-                node?.parent?.right = nil
+                node.parent?.right = nil
             }
             
             // 删除节点之后的处理
-            afterRemove(node: node!)
+            afterRemove(node: node, replacementNode: nil)
         }
     }
     

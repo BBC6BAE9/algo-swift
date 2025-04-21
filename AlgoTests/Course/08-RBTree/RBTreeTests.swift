@@ -9,20 +9,40 @@ import Testing
 
 struct RBTreeTests {
 
-    @Test func testRBTree() async throws {
+    @Test func testRBTreeAdd() async throws {
         let data:[Int] = [55, 87, 56, 74, 96, 22, 62, 20, 70, 68, 90, 50]
         
-        let avl = RBTree<Int>()
+        let rbTree = RBTree<Int>()
         for item in data {
-            avl.add(element: item)
+            rbTree.add(element: item)
         }
         
-        print(avl.asString)
+        print(rbTree.asString)
         
-        let ret = avl.root
+        let ret = rbTree.root
 
-        let want = 7
-//        assert(ret?.element == want)
+        let want = 70
+        assert(ret?.element == want)
+    }
+    
+    @Test func testRBTreeRemove() async throws {
+        let data:[Int] = [55, 87, 56, 74, 96, 22, 62, 20, 70, 68, 90, 50]
+        
+        let rbTree = RBTree<Int>()
+        for item in data {
+            rbTree.add(element: item)
+        }
+        
+        
+        print(rbTree.asString)
+
+        for item in data {
+            rbTree.remove(element: item)
+            print("-----------------")
+            print(rbTree.asString)
+        }
+        
+        assert(rbTree.root == nil)
     }
 
 }

@@ -33,7 +33,8 @@ class AVLTree<T: Comparable>: BBST<T> {
         }
     }
     
-    override func afterRemove(node: BinaryTree<T>.Node<T>) {
+    override func afterRemove(node: BinaryTree<T>.Node<T>,
+                              replacementNode: BinaryTree<T>.Node<T>?) {
         var node: (BinaryTree<T>.Node<T>)? = node
         while (node != nil) {
             if (isBlanced(node: node!)) {
@@ -119,17 +120,17 @@ class AVLTree<T: Comparable>: BBST<T> {
         
         if parent.isLeftChild() {
             if node.isLeftChild() { // LL
-                rotateRight(grand: grand)
+                rotateRight( grand)
             }else{ // LR
-                rotateLeft(grand: parent)
-                rotateRight(grand: grand)
+                rotateLeft( parent)
+                rotateRight( grand)
             }
         } else { // R
             if node.isLeftChild() { // RL
-                rotateRight(grand: parent)
-                rotateLeft(grand: grand)
+                rotateRight( parent)
+                rotateLeft( grand)
             }else{ // RR
-                rotateLeft(grand: grand)
+                rotateLeft( grand)
             }
         }
     }
