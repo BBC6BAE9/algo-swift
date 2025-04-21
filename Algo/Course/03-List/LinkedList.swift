@@ -13,7 +13,7 @@ class LinkedList<E: Equatable> {
     
     var _size: Int = 0
 
-    private var first: Node<E>?
+    var first: Node<E>?
     
     /// 获取index位置对应的节点对象
     private func node(index: Int) -> Node<E>? {

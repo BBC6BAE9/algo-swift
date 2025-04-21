@@ -36,7 +36,8 @@ class BST<T: Comparable>: BinaryTree<T> {
             } else if cmp < 0 {
                 node = node!.left
             } else {
-                node?.element = element
+                // 相等，说明元素重复，直接返回
+                return
             }
         }
         
@@ -70,7 +71,7 @@ class BST<T: Comparable>: BinaryTree<T> {
         remove(node: node(element: element))
     }
     
-    private func contains(element: T) -> Bool {
+    func contains(element: T) -> Bool {
         node(element: element) != nil
     }
     
