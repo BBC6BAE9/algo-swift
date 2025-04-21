@@ -37,5 +37,16 @@ struct ListSetTests {
         assert(ret == want)
     }
 
+    @Test func testMapSet() async throws {
+        let listSet = MapSet<Int>()
+        listSet.add(element: 10)
+        listSet.add(element: 11)
+        listSet.add(element: 11)
+        listSet.add(element: 10)
+        
+        let ret = listSet.size()
+        let want = 2
+        assert(ret == want)
+    }
 }
  

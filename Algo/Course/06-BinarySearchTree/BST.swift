@@ -20,10 +20,10 @@ class BST<T: Comparable>: BinaryTree<T> {
             return
         }
         
-        var node: Node<T>?  = root
+        var node: BinaryTree<T>.Node<T>?  = root
         
         
-        var parentNode: Node<T> = root
+        var parentNode: BinaryTree<T>.Node<T> = root
         var cmp: Int = 0
         while node != nil {
             
@@ -41,7 +41,7 @@ class BST<T: Comparable>: BinaryTree<T> {
             }
         }
         
-        let newNode: Node<T> = createNode(element: element, parent: parentNode)
+        let newNode: BinaryTree<T>.Node<T> = createNode(element: element, parent: parentNode)
         
         if cmp > 0 {
             parentNode.right = newNode
@@ -58,12 +58,12 @@ class BST<T: Comparable>: BinaryTree<T> {
     }
     
     // 添加Node之后的调整
-    public func afterAdd(node: Node<T>) {
+    public func afterAdd(node: BinaryTree<T>.Node<T>) {
             
     }
 
     // 删除Node之后的调整
-    public func afterRemove(node: Node<T>) {
+    public func afterRemove(node: BinaryTree<T>.Node<T>) {
             
     }
     
@@ -75,7 +75,7 @@ class BST<T: Comparable>: BinaryTree<T> {
         node(element: element) != nil
     }
     
-    private func remove(node: Node<T>?) {
+    private func remove(node: BinaryTree<T>.Node<T>?) {
         guard var node = node else { return }
         
         size -= 1
@@ -124,7 +124,7 @@ class BST<T: Comparable>: BinaryTree<T> {
     }
     
     /// 根据元素寻找节点
-    private func node(element: T) -> Node<T>? {
+    private func node(element: T) -> BinaryTree<T>.Node<T>? {
         var node = root
         while node != nil {
             let cmp = compare(e1: element, e2: node!.element)
