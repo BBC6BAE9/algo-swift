@@ -62,7 +62,7 @@ class BST<T: Comparable>: BinaryTree<T> {
     }
 
     // 删除Node之后的调整
-    public func afterRemove(node: Node<T>, replacementNode: Node<T>?) {
+    public func afterRemove(node: Node<T>) {
             
     }
     
@@ -103,13 +103,13 @@ class BST<T: Comparable>: BinaryTree<T> {
             }
             
             // 删除节点之后的处理
-            afterRemove(node: node, replacementNode: replacementNode)
+            afterRemove(node: node)
             
         } else if(node.parent == nil){ // node是叶子节点且是根节点
             root = nil
             
             // 删除节点之后的处理
-            afterRemove(node: node, replacementNode: nil)
+            afterRemove(node: node)
         }else{ // node是叶子节点，但不是根节点
             if(node == node.parent?.left) {
                 node.parent?.left = nil
@@ -118,7 +118,7 @@ class BST<T: Comparable>: BinaryTree<T> {
             }
             
             // 删除节点之后的处理
-            afterRemove(node: node, replacementNode: nil)
+            afterRemove(node: node)
         }
     }
     

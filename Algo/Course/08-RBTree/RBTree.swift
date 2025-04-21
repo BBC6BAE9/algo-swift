@@ -95,15 +95,11 @@ class RBTree<T: Comparable>: BBST<T> {
         }
     }
     
-    override func afterRemove(node: BinaryTree<T>.Node<T>,
-                              replacementNode: BinaryTree<T>.Node<T>?)
+    override func afterRemove(node: BinaryTree<T>.Node<T>)
     {
-        if isRed(node) {
-            return
-        }
         
-        if isRed(replacementNode) {
-            _ = black(replacementNode)
+        if isRed(node) {
+            _ = black(node)
             return
         }
         
@@ -135,7 +131,7 @@ class RBTree<T: Comparable>: BBST<T> {
                 _ = black(parent)
                 _ = red(sibling)
                 if parentBlack {
-                    afterRemove(node: parent!, replacementNode: nil)
+                    afterRemove(node: parent!)
                 }
             } else { // 兄弟节点至少有一个是红色节点, 向兄弟节点借元素
                 // 兄弟节点的左边是黑色
@@ -167,7 +163,7 @@ class RBTree<T: Comparable>: BBST<T> {
                 _ = black(parent)
                 _ = red(sibling)
                 if parentBlack {
-                    afterRemove(node: parent!, replacementNode: nil)
+                    afterRemove(node: parent!)
                 }
             } else { // 兄弟节点至少有一个是红色节点, 向兄弟节点借元素
                 // 兄弟节点的左边是黑色

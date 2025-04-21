@@ -33,8 +33,7 @@ class AVLTree<T: Comparable>: BBST<T> {
         }
     }
     
-    override func afterRemove(node: BinaryTree<T>.Node<T>,
-                              replacementNode: BinaryTree<T>.Node<T>?) {
+    override func afterRemove(node: BinaryTree<T>.Node<T>) {
         var node: (BinaryTree<T>.Node<T>)? = node
         while (node != nil) {
             if (isBlanced(node: node!)) {
