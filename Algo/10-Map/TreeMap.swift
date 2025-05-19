@@ -10,7 +10,7 @@ import Foundation
 class TreeMap<K: Comparable, V: Equatable>: MapProtocol {
     
     public var size: Int = 0
-    
+        
     private var root: Node<K, V>?
     
     func getSize() -> Int {
