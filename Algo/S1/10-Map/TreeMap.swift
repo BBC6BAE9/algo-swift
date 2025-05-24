@@ -10,7 +10,7 @@ import Foundation
 class TreeMap<K: Comparable, V: Equatable>: MapProtocol {
     
     public var size: Int = 0
-    
+        
     private var root: Node<K, V>?
     
     func getSize() -> Int {
@@ -39,8 +39,6 @@ class TreeMap<K: Comparable, V: Equatable>: MapProtocol {
         }
         
         var node: Node<K, V>? = root
-        
-        
         var parent: Node<K, V> = root
         var cmp: Int = 0
         while node != nil {
@@ -176,12 +174,7 @@ class TreeMap<K: Comparable, V: Equatable>: MapProtocol {
             return -1
         }
     }
-    
-    //    func get(key: K) -> V? {
-    //        return node(key: key)?.value
-    //    }
-    
-    
+
     /// 染色
     private func color(node:Node<K, V>?,
                        color: Bool) -> Node<K, V>?
@@ -416,7 +409,6 @@ class TreeMap<K: Comparable, V: Equatable>: MapProtocol {
     
     // 获取一个节点的前驱节点
     // 前驱节点（predecessor）中序遍历时的前一个节点
-    
     private  func predecessor(node: Node<K, V>?) -> Node<K, V>? {
         var node = node
         if node == nil {

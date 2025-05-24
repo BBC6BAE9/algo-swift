@@ -14,8 +14,7 @@ class RBTree<T: Comparable>: BBST<T> {
     
     /// 染色
     private func color(node:Node<T>?,
-                       color: Bool) -> Node<T>?
-    {
+                       color: Bool) -> Node<T>? {
         guard let node = node as? RBNode<T> else { return nil }
         node.color = color
         return node
