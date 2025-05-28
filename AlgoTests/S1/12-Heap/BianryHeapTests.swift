@@ -51,9 +51,19 @@ struct BianryHeapTests {
         heap.add(element: 90)
         heap.add(element: 65)
         
+        print("\(heap)")
+        
         let ret = heap.replace(element: 70)
     
         print("\(heap)")
     }
 
+    @Test func testHeapify2() async throws {
+        let data = [68, 72, 43, 50, 38, 10, 90, 65]
+            
+        let heap = BinaryHeap(elements: data)
+        
+        print("\(heap)")
+    }
+    
 }

@@ -15,7 +15,26 @@ class BinaryHeap<E: Comparable>: AbstractHeap<E> {
     private var elements: FixedSizeArray<E>
     
     private var size = 0
-    
+
+    init(elements:[E]) {
+        
+        guard elements.count > 0 else {
+            self.elements = FixedSizeArray.init(capacity: DEFAULT_CAPACITY)
+            super.init()
+            return
+        }
+        
+        size = elements.count
+        let capacity = max(DEFAULT_CAPACITY, elements.count)
+        self.elements = FixedSizeArray<E>(capacity: capacity)
+        for i in 0..<elements.count {
+            self.elements[i] = elements[i]
+        }
+        super.init()
+        heapify()
+        
+    }
+
     override init() {
         self.elements = FixedSizeArray.init(capacity: DEFAULT_CAPACITY)
         super.init()
@@ -181,4 +200,16 @@ class BinaryHeap<E: Comparable>: AbstractHeap<E> {
         print("old capacity = \(oldCapacity), new capacity = \(newCapacity)")
     }
     
+    /// 批量建堆
+    private func heapify() {
+        // 方法一：自上而下的上溢
+//        for i in (1..<size) {
+//            siftUp(index: i)
+//        }
+            
+        // 方法二：自下而上的下溢
+        for i in (0..<(size >> 1)).reversed() {
+            siftDown(index: i)
+        }
+    }
 }
