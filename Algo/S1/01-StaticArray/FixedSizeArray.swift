@@ -16,6 +16,7 @@ class FixedSizeArray<E> {
         self.elements = [E?](repeating: nil, count: capacity)
     }
     
+    // TODO: 这个地方是不是需要把返回值改成E
     subscript(index: Int) -> E? {
         get {
             checkBounds(index)

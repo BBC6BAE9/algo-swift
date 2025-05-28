@@ -25,7 +25,7 @@ class AbstractHeap<E: Comparable>: Heap {
         fatalError()
     }
     
-    func replace(element: E) {
+    func replace(element: E) -> E? {
         fatalError()
     }
     
