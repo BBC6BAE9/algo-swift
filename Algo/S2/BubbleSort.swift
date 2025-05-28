@@ -11,8 +11,9 @@ func bubbleSort(array: [Int]) -> [Int] {
     
     var array = array
     
-    for end in (0..<array.count - 1).reversed() {
-        for begin in 1..<array.count {
+    for end in (1..<array.count).reversed() {
+        print(end)
+        for begin in 1..<end {
             if array[begin] < array[begin - 1] {
                 let tmp = array[begin]
                 array[begin] = array[begin - 1]
