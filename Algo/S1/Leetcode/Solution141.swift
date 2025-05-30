@@ -26,7 +26,7 @@ class Solution141 {
         }
     }
 
-    /// 是否有环
+    /// 判断链表是否有环
     /// 解题思路：快慢指针，慢指针一次走一步，快指针一次走两步，如果有环，走到一定程度会相遇，如果快指针先到nil可说明没有环
     func hasCycle(_ head: ListNode?) -> Bool {
         guard let head = head,

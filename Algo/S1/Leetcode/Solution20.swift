@@ -27,6 +27,7 @@ extension String {
 
 class Solution20 {
     
+    // 合法的括号
     func isValid2(_ s: String) -> Bool {
         
         if s.isEmpty {

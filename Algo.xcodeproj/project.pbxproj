@@ -72,12 +72,12 @@
 				S1/Leetcode/Solution237.swift,
 				S1/Leetcode/Solution856.swift,
 				S1/Leetcode/Solution1823.swift,
-				S2/BubbleSort.swift,
-				S2/BubbleSort2.swift,
-				S2/BubbleSort3.swift,
-				S2/HeapSort.swift,
-				S2/SelectionSort.swift,
-				S2/Sort.swift,
+				"S2/01-Sort/BubbleSort.swift",
+				"S2/01-Sort/BubbleSort2.swift",
+				"S2/01-Sort/BubbleSort3.swift",
+				"S2/01-Sort/HeapSort.swift",
+				"S2/01-Sort/SelectionSort.swift",
+				"S2/01-Sort/Sort.swift",
 			);
 			target = F1F110B02D76B2C200527D54 /* AlgoTests */;
 		};
