@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BubbleSort: Sort {
+class BubbleSort<E: Comparable>: Sort<E> {
     
     override func sort() {
         for end in (1..<array.count).reversed() {

@@ -88,7 +88,7 @@ struct BubbleSortTests {
     
     
     @Test func testHeapSort() async throws {
-        let hs = HeapSort()
+        let hs = HeapSort<Int>()
         
         var input = [10, 9, 29, 28, 37, 56, 34]
         

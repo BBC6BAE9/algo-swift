@@ -7,8 +7,7 @@
 
 import Foundation
 
-// TODO:
-class HeapSort: Sort {
+class HeapSort<E: Comparable>: Sort<E> {
     
     private var heapSize: Int = 0
     

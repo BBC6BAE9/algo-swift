@@ -7,7 +7,8 @@
 
 import Foundation
 
-class SelectionSort: Sort {
+
+class SelectionSort<E:Comparable>: Sort<E> {
     
     override func sort() {
         for end in (1..<array.count).reversed() {

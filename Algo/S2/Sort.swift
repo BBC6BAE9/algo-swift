@@ -7,14 +7,14 @@
 
 import Foundation
 
-class Sort  {
+class Sort<E: Comparable>  {
     
-    public var array: [Int] = []
+    public var array: [E] = []
     var cmpCount: Int = 0
     var swapCount: Int = 0
     var timeString: String = ""
 
-    public func sort(array: inout [Int]){
+    public func sort(array: inout [E]){
         if array.count < 2 { return }
         self.array = array
         
@@ -39,12 +39,26 @@ class Sort  {
     ///            返回值大于0，代表 array[i1] > array[i2]
     public func cmp(i1: Int, i2: Int) -> Int {
         cmpCount += 1
-        return array[i1] - array[i2]
+        
+        if (array[i1] == array[i2]) {
+            return 0
+        }else if (array[i1] < array[i2]) {
+            return -1
+        }else{
+            return 1
+        }
     }
     
-    public func cmpElements(v1: Int, v2: Int) -> Int {
+    public func cmpElements(v1: E, v2: E) -> Int {
         cmpCount += 1
-        return v1 - v2
+        
+        if (v1 == v2) {
+            return 0
+        }else if (v1 < v2) {
+            return -1
+        }else{
+            return 1
+        }
     }
     
     /// 交换两个元素的位置

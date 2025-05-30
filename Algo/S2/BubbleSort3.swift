@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BubbleSort3: Sort {
+class BubbleSort3<E: Comparable>: Sort<E> {
     
     override func sort() {
         var end = array.count - 1 // 初始化终点位置为最后一个索引
