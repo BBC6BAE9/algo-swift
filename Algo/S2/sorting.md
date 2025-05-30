@@ -135,7 +135,43 @@ func bubbleSort(array: [Int]) -> [Int] {
 
 执行流程
 
-从序列中找出最大的那个元素，然后与最末尾的元素位置交换
+① 从序列中找出最大的那个元素，然后与最末尾的元素位置交换
 
 ✓ 执行完一轮后，最末尾的那个元素就是最大的元素
 
+② 忽略①中曾经找到的最大元素，重复执行步骤①
+
+```Swift
+/// 选择排序
+func selelctionSort(array: inout [Int]) {
+    for end in (1..<array.count).reversed() {
+        var maxIndex = 0
+        for begin in 1...end {
+            if array[maxIndex] <= array[begin] {
+                maxIndex = begin
+            }
+        }
+        
+        let tmp = array[maxIndex]
+        array[maxIndex] = array[end]
+        array[end] = tmp
+    }
+}
+```
+
+选择排序的交换次数远远小于冒泡排序，平均性能优于冒泡排序
+
+最好、最坏的时间复杂度都是O(n^2), 空间复杂度O(1), 属于稳定排序
+
+选择排序有没有优化的空间呢,答案是肯定的。可以优化到nlogn
+
+# 堆排序HeapSort
+
+堆排序可以认为是对选择排序的一种优化
+
+执行流程
+① 对序列进行原地建堆（heapify） 
+② 重复执行以下操作，直到堆的元素数量为1
+✓ 交换堆顶元素和尾元素
+✓ 堆的元素数量减1
+✓ 对0位置进行一次siftDown操作

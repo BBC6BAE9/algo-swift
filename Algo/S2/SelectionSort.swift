@@ -1,5 +1,5 @@
 //
-//  BubbleSort.swift
+//  SelectionSort.swift
 //  Algo
 //
 //  Created by hong on 5/30/25.
@@ -7,16 +7,18 @@
 
 import Foundation
 
-class BubbleSort: Sort {
+class SelectionSort: Sort {
     
     override func sort() {
         for end in (1..<array.count).reversed() {
+            var maxIndex = 0
             for begin in 1...end {
-                if cmp(i1: begin, i2:begin - 1) < 0 {
-                    swap(i1: begin, i2: begin - 1)
+                if cmp(i1: maxIndex, i2: begin) <= 0 {
+                    maxIndex = begin
                 }
             }
+            
+            swap(i1: maxIndex, i2: end)
         }
     }
-    
 }

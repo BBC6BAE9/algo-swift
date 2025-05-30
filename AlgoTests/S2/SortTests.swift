@@ -71,4 +71,32 @@ struct BubbleSortTests {
         print("【优化算法】bubblesort2的执行时间：\(elapsed2.description)")
     }
 
+    @Test func testSelelctionSort() async throws {
+        var input = [10, 9, 29, 28, 37, 56, 34]
+        
+        selelctionSort(array: &input)
+        
+        let ret = input
+        
+        let want = [9, 10, 28, 29, 34, 37, 56]
+
+        assert(ret == want)
+    }
+    
+    
+    @Test func testHeapSort() async throws {
+        let hs = HeapSort()
+        
+        var input = [10, 9, 29, 28, 37, 56, 34]
+        
+        hs.sort(array: &input)
+        
+        let ret = input
+        
+        let want = [9, 10, 28, 29, 34, 37, 56]
+
+        assert(ret == want)
+    }
+    
+
 }
