@@ -1,0 +1,141 @@
+# Sorting
+
+## 10大排序算法
+
+| 名称                           | 时间复杂度                             | 额外空间复杂度 | In-place | 稳定性 |
+| ------------------------------ | -------------------------------------- | -------------- | -------- | ------ |
+|                                | 最好     最坏     平均                 |                |          |        |
+| **冒泡排序（Bubble Sort）**    | O(n)    O(n²)    O(n²)                 | O(1)           | ✔        | ✔      |
+| **选择排序（Selection Sort）** | O(n²)    O(n²)    O(n²)                | O(1)           | ✔        | ✖      |
+| **插入排序（Insertion Sort）** | O(n)    O(n²)    O(n²)                 | O(1)           | ✔        | ✔      |
+| **归并排序（Merge Sort）**     | O(nlogn)    O(nlogn)    O(nlogn)       | O(n)           | ✖        | ✔      |
+| **快速排序（Quick Sort）**     | O(nlogn)    O(n²)    O(nlogn)          | O(logn)        | ✔        | ✖      |
+| **希尔排序（Shell Sort）**     | O(n)    O(n^(4/3))~O(n²)               | O(1)           | ✔        | ✖      |
+| **堆排序（Heap Sort）**        | O(nlogn)    O(nlogn)    O(nlogn)       | O(1)           | ✔        | ✖      |
+| **基数排序（Radix Sort）**     | O(d*(n+k))    O(d*(n+k))    O(d*(n+k)) | O(n+k)         | ✖        | ✔      |
+| **桶排序（Bucket Sort）**      | O(n+k)    O(n+k)    O(n+k)             | O(n+m)         | ✖        | ✔      |
+| **计数排序（Counting Sort）**  | O(n+k)    O(n+k)    O(n+k)             | O(n+k)         | ✖        | ✔      |
+
+冒泡、选择、插入、归并、快速、希尔、堆排序，属于比较排序（Comparison Sorting）
+
+## 冒泡排序
+
+执行流程（以升序为例）
+
+```Swift
+/// 冒泡排序
+func bubbleSort(array: [Int]) -> [Int] {
+    var array = array
+
+    for end in (1..<array.count).reversed() {
+        for begin in 1...end {
+            if array[begin] < array[begin - 1] {
+                let tmp = array[begin]
+                array[begin] = array[begin - 1]
+                array[begin - 1] = tmp
+            }
+        }
+    }
+
+    return array
+}
+```
+
+## 冒泡排序的优化1
+如果给出的序列已经完全有序，可以提前终止冒泡排序
+
+```Swift
+/// 冒泡排序优化1
+func bubbleSort1(array: [Int]) -> [Int] {
+    var array = array
+
+    for end in (1..<array.count).reversed() {
+        var sorted = true
+        for begin in 1...end {
+            if array[begin] < array[begin - 1] {
+                let tmp = array[begin]
+                array[begin] = array[begin - 1]
+                array[begin - 1] = tmp
+                sorted = false
+            }
+        }
+
+        if sorted { break }
+    }
+
+    return array
+}
+```
+## 冒泡排序的优化2
+
+如果序列尾部已经局部有序，可以记录最后一次交换的位置，减少比较的次数
+
+```Swift
+func bubbleSort2(array: [Int]) -> [Int] {
+    var array = array
+    var end = array.count - 1 // 初始化终点位置为最后一个索引
+    
+    while end >= 1 {
+        var sortedIndex = 0
+        
+        for begin in 1...end {
+            if array[begin] < array[begin - 1] {
+                array.swapAt(begin, begin - 1)
+                sortedIndex = begin
+            }
+        }
+        end = sortedIndex
+    }
+    
+    return array
+}
+
+```
+
+# 排序算法的稳定性（Stability）
+
+如果相等的两个元素，在排序后的相对位置保持不变，那么这是稳定的排序算法
+
+排序前 5，1，3a，4，7，3b
+稳定排序 1，3a，3b，4，5，7
+不稳定排序 1，3b，3a，4，5，7 
+
+冒泡排序属于稳定排序算法
+
+稍有不慎，稳定的排序算法也能被写成不稳定算法，比如说下面的冒泡算法就是不稳定的
+
+```Swift
+/// ☠️ 不稳定的冒泡排序
+func bubbleSort(array: [Int]) -> [Int] {
+    var array = array
+
+    for end in (1..<array.count).reversed() {
+        for begin in 1...end {
+            if array[begin] <= array[begin - 1] {
+                let tmp = array[begin]
+                array[begin] = array[begin - 1]
+                array[begin - 1] = tmp
+            }
+        }
+    }
+
+    return array
+}
+```
+
+## 原地算法（In-place Algorithm）
+
+何为原地算法？
+- 不依赖额外的资源或者依赖少数的额外资源，仅依靠输出来覆盖输入
+
+- 空间复杂度为O(1)的资源都可以认为是原地算法
+
+
+## 选择排序
+
+执行流程
+
+从序列中找出最大的那个元素，然后与最末尾的元素位置交换
+
+✓ 执行完一轮后，最末尾的那个元素就是最大的元素
+
