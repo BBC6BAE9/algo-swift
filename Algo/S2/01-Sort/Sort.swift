@@ -73,6 +73,12 @@ class Sort<E: Comparable>  {
     var description: String {
         return "\n ------------------------- \n 🕙 性能表现：\n comparisons: \(cmpCount)\n swaps: \(swapCount)\n time: \(timeString) \n ------------------------- \n"
     }
+    
+    // 排序算法是否稳定
+    var isStatble: Bool {
+        // TODO: 评测算法是否稳定S2P2
+        return true
+    }
 }
 
 /// 冒泡排序

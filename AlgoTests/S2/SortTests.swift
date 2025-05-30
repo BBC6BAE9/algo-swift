@@ -52,7 +52,7 @@ struct BubbleSortTests {
     
     @Test func testBubbleSortPerformance() async throws {
     
-        var input = (0..<4000).map { _ in Int.random(in: 0...9999) }
+        var input = (0..<1000).map { _ in Int.random(in: 0...9999) }
 
         let clock = ContinuousClock()
         let elapsed = clock.measure {
@@ -60,13 +60,13 @@ struct BubbleSortTests {
         }
         print("bubbleSort的执行时间：\(elapsed.description)")
         
-        input = (0..<4000).map { _ in Int.random(in: 0...9999) }
+        input = (0..<1000).map { _ in Int.random(in: 0...9999) }
         let elapsed1 = clock.measure {
             bubbleSort1(array: &input)
         }
         print("【优化算法】bubblesort1的执行时间：\(elapsed1.description)")
         
-        input = (0..<4000).map { _ in Int.random(in: 0...9999) }
+        input = (0..<1000).map { _ in Int.random(in: 0...9999) }
         
         let elapsed2 = clock.measure {
             bubbleSort2(array: &input)
@@ -102,5 +102,22 @@ struct BubbleSortTests {
         
         assert(ret == want)
     }
+
+    @Test func testInsertionSort() async throws {
+        let hs = InsertionSort<Int>()
+        
+        var input = [10, 9, 29, 28, 37, 56, 34]
+        
+        hs.sort(array: &input)
+        
+        let ret = input
+        
+        let want = [9, 10, 28, 29, 34, 37, 56]
+
+        print(hs.description)
+        
+        assert(ret == want)
+    }
+    
     
 }
