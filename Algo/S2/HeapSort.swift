@@ -13,11 +13,10 @@ class HeapSort: Sort {
     private var heapSize: Int = 0
     
     override func sort() {
-        
         heapSize = array.count
         
         // 原地建堆
-        for i in (0..<(heapSize >> 1)).reversed() {
+        for i in (0 ..< (heapSize >> 1)).reversed() {
             siftDown(index: i)
         }
         
@@ -32,10 +31,9 @@ class HeapSort: Sort {
         }
     }
     
-    
     private func siftDown(index: Int) {
         var index = index
-        let element  = array[index]
+        let element = array[index]
         let half = heapSize >> 1
         // 第一个的索引 == 非叶子节点的数量
         // indx < 第一个叶子节点的索引
@@ -53,11 +51,10 @@ class HeapSort: Sort {
             let rightIndex = childIndex + 1
             
             // 选出左右子节点最大的那个
-            if rightIndex < heapSize && cmpElements(v1: array[rightIndex] , v2: child) > 0 {
+            if rightIndex < heapSize && cmpElements(v1: array[rightIndex], v2: child) > 0 {
                 childIndex = rightIndex
                 child = array[childIndex]
             }
-            
             
             if cmpElements(v1: element, v2: child) > 0 { break }
             
@@ -66,10 +63,11 @@ class HeapSort: Sort {
             
             // 重新设置index
             index = childIndex
-            
         }
         
         array[index] = element
     }
+    
+    
     
 }

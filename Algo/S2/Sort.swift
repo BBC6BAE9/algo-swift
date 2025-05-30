@@ -12,11 +12,19 @@ class Sort  {
     public var array: [Int] = []
     var cmpCount: Int = 0
     var swapCount: Int = 0
+    var timeString: String = ""
 
     public func sort(array: inout [Int]){
         if array.count < 2 { return }
         self.array = array
-        sort()
+        
+        let clock = ContinuousClock()
+        let elapsed = clock.measure {
+            sort()
+        }
+        
+        timeString = elapsed.description
+        
         // Update the original array with the sorted array
         array = self.array
     }
@@ -45,6 +53,11 @@ class Sort  {
         let tmp = array[i1]
         array[i1] = array[i2]
         array[i2] = tmp
+    }
+    
+    
+    var description: String {
+        return "\n ------------------------- \n 🕙 性能表现：\n comparisons: \(cmpCount)\n swaps: \(swapCount)\n time: \(timeString) \n ------------------------- \n"
     }
 }
 
