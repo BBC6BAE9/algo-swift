@@ -59,6 +59,7 @@
 				"S1/12-Heap/AbstractHeap.swift",
 				"S1/12-Heap/BianryHeap.swift",
 				"S1/12-Heap/Heap.swift",
+				"S1/13-PriorityQueue/PriorityQueue.swift",
 				S1/Leetcode/Solution1.swift,
 				S1/Leetcode/Solution20.swift,
 				S1/Leetcode/Solution42.swift,

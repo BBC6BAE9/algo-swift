@@ -30,6 +30,6 @@ protocol Heap {
     func remove() -> E
     
     // 删除堆顶元素的同时插入一个新元素
-    func replace(element: E)
+    func replace(element: E) -> E?
     
 }
