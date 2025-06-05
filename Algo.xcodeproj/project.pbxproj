@@ -77,8 +77,9 @@
 				"S2/01-Sort/BubbleSort2.swift",
 				"S2/01-Sort/BubbleSort3.swift",
 				"S2/01-Sort/HeapSort.swift",
-				"S2/01-Sort/InsertionSort.swift",
 				"S2/01-Sort/InsertionSort1.swift",
+				"S2/01-Sort/InsertionSort2.swift",
+				"S2/01-Sort/InsertionSort3.swift",
 				"S2/01-Sort/SelectionSort.swift",
 				"S2/01-Sort/Sort.swift",
 			);
