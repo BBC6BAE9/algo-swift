@@ -249,3 +249,4 @@ func selelctionSort(array: inout [Int]) {
 如果v是15 返回7
 如果v是8 返回5
 
+仅优化比较次数，但是插入排序的平均时间复杂度任然是O(n^2)

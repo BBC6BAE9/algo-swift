@@ -12,16 +12,19 @@ class InsertionSort3<E: Comparable>: Sort<E> {
     
     override func sort() {
         for begin in 1..<array.count {
-            let v = array[begin]
-            let insertIndex = search(index: begin)
-            
-            // 将 [insertIndex, begin) 范围内的元素往右边移动一位
-            for i in stride(from: begin, to: insertIndex, by: -1) {
-                array[i] = array[i - 1]
-            }
-            
-            array[insertIndex] = v
+            insert(source: begin, dest: search(index: begin))
         }
+    }
+    
+    private func insert(source: Int, dest: Int) {
+        let v = array[source]
+        
+        // 将 [insertIndex, begin) 范围内的元素往右边移动一位
+        for i in stride(from: source, to: dest, by: -1) {
+            array[i] = array[i - 1]
+        }
+        
+        array[dest] = v
     }
     
     // 利用二分搜索找到 index 位置元素的插入位置
