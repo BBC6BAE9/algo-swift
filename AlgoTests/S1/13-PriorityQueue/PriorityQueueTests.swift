@@ -14,7 +14,7 @@ struct PriorityQueueTests {
         pq.enQueue(element: Person(name: "Jack", boneBreak: 2))
         pq.enQueue(element: Person(name: "Rose", boneBreak: 10))
         pq.enQueue(element: Person(name: "Jake", boneBreak: 5))
-        pq.enQueue(element: Person(name: "James", boneBreak: 15)) 
+        pq.enQueue(element: Person(name: "James", boneBreak: 15))
         
         let person = pq.deQueue()!
         let ret = person.name
