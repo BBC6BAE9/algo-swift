@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+/// 选择排序
 class SelectionSort<E:Comparable>: Sort<E> {
     
     override func sort() {

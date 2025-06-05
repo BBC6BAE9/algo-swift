@@ -7,7 +7,7 @@
 
 import Testing
 
-struct BubbleSortTests {
+struct SortTests {
 
     @Test func testBubbleSort() async throws {
         
@@ -118,6 +118,43 @@ struct BubbleSortTests {
         
         assert(ret == want)
     }
+    
+    
+    @Test func testInsertionSort1() async throws {
+        let hs = InsertionSort1<Int>()
+        
+        var input = [10, 9, 29, 28, 37, 56, 34]
+        
+        hs.sort(array: &input)
+        
+        let ret = input
+        
+        let want = [9, 10, 28, 29, 34, 37, 56]
+
+        print(hs.description)
+        
+        assert(ret == want)
+    }
+    
+    
+    @Test func testBinarySearch() async throws {
+        let bs = BinarySearch()
+        
+        let input = [9, 10, 28, 29, 34, 37, 56]
+        
+        let ret1 = bs.indexOf(array: input, v: 9)
+        
+        let want1 = 0
+        
+        
+        let ret2 = bs.indexOf(array: input, v: 10)
+        
+        let want2 = 1
+        
+        assert(ret1 == want1)
+        assert(ret2 == want2)
+    }
+    
     
     
 }
