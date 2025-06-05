@@ -7,7 +7,7 @@
 
 import Testing
 
-struct TestBubbleSort {
+struct BubbleSortTests {
 
     @Test func testBubbleSort() async throws {
         
