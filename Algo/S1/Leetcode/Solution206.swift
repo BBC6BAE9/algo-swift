@@ -7,9 +7,7 @@
 
 import Foundation
 
-// 206 https://leetcode.cn/problems/reverse-linked-list/description/
-// 给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。
-
+// 206. 反转链表    https://leetcode.cn/problems/reverse-linked-list/
 class Solution206 {
     // Definition for singly-linked list.
     class ListNode {

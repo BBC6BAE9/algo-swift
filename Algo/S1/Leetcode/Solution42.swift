@@ -11,6 +11,8 @@ import Foundation
 // https://leetcode.cn/problems/trapping-rain-water/description/
 
 class Solution42 {
+    
+    // 接雨水
     func trap(_ height: [Int]) -> Int {
         var res = 0
         
