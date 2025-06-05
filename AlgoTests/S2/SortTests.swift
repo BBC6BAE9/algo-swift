@@ -155,6 +155,17 @@ struct SortTests {
         assert(ret2 == want2)
     }
     
+    @Test func testBinarySearchSearch() async throws {
+        let bs = BinarySearch()
+        
+        let input = [2, 4, 8, 8, 8, 12, 14]
+        
+        assert(bs.search(array: input, v: 5) == 2)
+        assert(bs.search(array: input, v: 1) == 0)
+        assert(bs.search(array: input, v: 15) == 7)
+        assert(bs.search(array: input, v: 8) == 5)
+    }
+    
     
     
 }

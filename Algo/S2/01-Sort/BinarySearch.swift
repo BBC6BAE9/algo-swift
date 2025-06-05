@@ -9,7 +9,7 @@ import Foundation
 
 class BinarySearch {
     
-    /// 二分查找元素的index
+    /// 查找V在有序数组array中的位置
     func indexOf(array: [Int], v: Int) -> Int {
         if array.isEmpty { return -1 }
         
@@ -31,12 +31,24 @@ class BinarySearch {
         
         return -1
     }
-    
-    
-    /// 二分查找待插入的index
-    func search(array: [Int], v: Int) -> Int {
-        
-        return -1
-    }
 
+    
+    /// 寻找v在有序数组中插入的位置（第一个大于V的元素的位置）
+    func search(array: [Int], v: Int) -> Int {
+        if array.isEmpty { return -1 }
+
+        var begin = 0
+        var end = array.count
+
+        while begin < end {
+            let mid = (begin + end) >> 1
+            if v < array[mid] {
+                end = mid
+            } else {
+                begin = mid + 1
+            }
+        }
+        
+        return begin
+    }
 }
