@@ -9,7 +9,7 @@ import Foundation
 
 class Trie<V> {
     
-    private var size: Int
+    private var size: Int = 0
     
     func getSize() -> Int {
         return 0

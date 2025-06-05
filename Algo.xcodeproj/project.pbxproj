@@ -82,6 +82,7 @@
 				"S2/01-Sort/InsertionSort3.swift",
 				"S2/01-Sort/SelectionSort.swift",
 				"S2/01-Sort/Sort.swift",
+				"S2/03-Graph/ListGraph.swift",
 			);
 			target = F1F110B02D76B2C200527D54 /* AlgoTests */;
 		};
